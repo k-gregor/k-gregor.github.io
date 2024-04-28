@@ -2,11 +2,11 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Konstantin Gregor
     - name: Date of Birth
-      value: 14th March 1879
+      value: 18th August 1988
     - name: Languages
-      value: English, German
+      value: German, English, French, Spanish
 
 - title: Education
   type: time_table
@@ -31,9 +31,9 @@
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Senior Software Developer
+      institution: TNG Technology Consulting
+      year: 2014 - 2020
       description:
         - Description 1.
         - Description 2.
