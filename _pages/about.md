@@ -2,21 +2,19 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD candiate at TUM, senior software developer
+subtitle: <p>PhD candidate, senior software developer<br/>Technical University of Munich, Hans-Carl-von-Carlowitz-Platz 2, 85354 Freising, Germany</p><br/><br/>
 
 profile:
-  align: right
+  align: left
   image: prof_pic.jpg
-  image_circular: true # crops the image to make it circular
-  more_info: >
-    <p>Technical University of Munich</p>
-    <p>Hans-Carl-von-Carlowitz-Platz 2</p>
-    <p>85354 Freising, Germany</p>
+  image_circular: false # crops the image to make it circular
+  more_info: 
 
 news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi there! My name is Konstantin, I am a fourth year PhD student at Technical University of Munich. I combine vegetation and climate modeling with robust optimization to investigate options for climate change mitigation, adaptation, and ecosystem service provision under uncertain future climate. It is my hope that this research may help develop forward looking strategies for forest management, agriculture and other disciplines.
+Hi there, my name is Konstantin! After studies in mathematics and computer science and six years in the software development industry, I changes paths to work in climate science. Now, I am a fourth year PhD student at Technical University of Munich. I combine vegetation and climate modeling with robust optimization to investigate options for climate change mitigation, adaptation, and ecosystem service provision under uncertain future climate. It is my hope that this research may help develop forward looking strategies for forest management, agriculture and other disciplines.
+<br/><br/><br/><br/>
 
