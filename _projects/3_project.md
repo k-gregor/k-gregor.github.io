@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: FOREXCLIM
+description: "Forests and extreme weather events: Solutions for risk resilient management in a changing climate"
+img: assets/img/forexclim.png
+redirect: https://www.foreco.org/index.php/2023/11/20/a-summary-of-forexclim-project/
 importance: 3
 category: work
 ---

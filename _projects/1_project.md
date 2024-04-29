@@ -1,10 +1,11 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: 3FOR project
+description: I am co-PI in the 3FOR project ("Foresight For Forests"). Developing forward-looking strategies for mitigation and adaptation of forests under climate change
+img: assets/img/3for.png
+redirect: https://www.lss.ls.tum.de/lsai/projekte/3for-project/
 importance: 1
-category: work
+category:
 related_publications: true
 ---
 

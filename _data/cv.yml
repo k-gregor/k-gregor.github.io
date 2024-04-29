@@ -7,91 +7,75 @@
       value: 18th August 1988
     - name: Languages
       value: German, English, French, Spanish
+    - name: Programming languages
+      value: Java, Python, C++, JavaScript
+    - name: Software frameworks
+      value: Docker, Kubernetes, Apache Flink, AWS, Azure, Apache Kafka, Serverless, Spring Boot
+    - name: Science tools
+      value: Jupyter, Earth Engine, DGVMs, LPJ-GUESS, TRENDY, CMIP
 
 - title: Education
   type: time_table
   contents:
     - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+      institution: Technical University Munich, Freising, Germany
+      year: 2020 - now
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - I used vegetation models and robust multi-criteria optimization to develop strategies for climate-smart forestry under uncertainty. Namely, forests should help mitigate climate change, and provide numerous ecosystem services (e.g., timber provision, local climate regulation, or habitat provision), while they also need to be adapted to withstand global change.
+        - "<b>Thesis title:</b> European forests and the land sector under climate change: Strategies for mitigation, adaptation, and ecosystem service provision"
+    - title: Master's degree
+      institution: University of Heidelberg, Heidelberg, Germany
+      year: 2012 - 2014
       description:
-        - Description 1.
-        - Description 2.
-
+        - "Major: Mathematics"
+        - "Minor: Computer Science"
+        - "<b>Thesis title:</b> A machine learning algorithm for the detection of Cuneiform script"
+    - title: Bachelor's degree
+      institution: University of California, Berkeley, USA, and Technical University of Berlin, Berlin, Germany
+      year: 2008 - 2012
+      description:
+        - "Major: Mathematics"
+        - "Minor: Economics"
+        - "<b>Thesis title:</b> Three random graph models and their applications"
 - title: Experience
   type: time_table
   contents:
-    - title: Senior Software Developer
+    - title: (Senior) Software Developer
       institution: TNG Technology Consulting
       year: 2014 - 2020
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - title: Project at global insurance company.
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+            - Set-up of a highly resilient big data platform to compute the company's value-at-risk
+            - "Frameworks used: Docker, Kubernetes, Apache Flink, Apache Kafka, Spring Boot, Azure"
+        - title: Project at a global telecommunications company.
+          contents:
+            - Designed, implemented and tested a data streaming platform dealing with over 6 billion data records per day.
+            - "Frameworks used: Apache Flink, Apache Kafka, Hadoop, OracleDB, Ansible, terraform, AWS" 
+    - title: Visiting Scientist
+      institution: University of California, Berkeley, CA, USA
+      year: 2022
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+        - I spent two months visiting the Keenan group at UC Berkeley, profiting from their experience using FLUXNET data and data analysis in general.
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Modeling
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Vegetation modeling
+        - Inverse modeling
+    - title: Remote sensing
       items:
-        - Description 1.
-        - Description 2.
+        - Early warning signals for critical transitions
+    - title: Climate change mitigation, climate-smart land use under uncertainty
+      items:
+        - How can we improve the mitigation potential of ecosystems while adapting them to global change and sustaining ecosystem service provision, all under the wide uncertainty of climate change projections?
+    - title: Ecosystem services
+      items:
+        - Global ecosystems provide numerous ecosystem services to humankind yet they are often optimized for single services (e.g., forestry is often solely aimed at maximizing timber provision). However, ecosystems should be managed taking all these services into account"
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <b>Hobbies:</b> skateboarding, making music, dancing, politics, literature

@@ -1,10 +1,11 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
+title: ISIMIP forestry
+description: "Providing model runs with LPJ-GUESS to assess the impact of climate change on European forests."
+img: assets/img/isimip.png
+redirect: https://protocol.isimip.org/#ISIMIP3a/forestry
 importance: 3
-category: fun
+category: work
 ---
 
 Every project has a beautiful feature showcase page.

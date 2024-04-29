@@ -1,10 +1,11 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: STEPSEC
+description: Comparative evaluation of the potential of terrestrial methods to remove carbon dioxide
+img: assets/img/stepsec.png
+redirect: https://cdrterra.de/en/consortia/stepsec
 importance: 2
-category: work
+category:
 giscus_comments: true
 ---
 
