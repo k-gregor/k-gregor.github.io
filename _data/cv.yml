@@ -51,7 +51,7 @@
         - title: Project at a global telecommunications company.
           contents:
             - Designed, implemented and tested a data streaming platform dealing with over 6 billion data records per day.
-            - "Frameworks used: Apache Flink, Apache Kafka, Hadoop, OracleDB, Ansible, terraform, AWS" 
+            - "Frameworks used: Apache Flink, Apache Kafka, Hadoop, OracleDB, Ansible, terraform, AWS"
     - title: Visiting Scientist
       institution: University of California, Berkeley, CA, USA
       year: 2022

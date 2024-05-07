@@ -32,7 +32,7 @@
       "studyType": "PhD",
       "startDate": "2020-04-07",
       "endDate": "",
-      "score": "10",
+      "score": "10"
     }
   ],
   "awards": [
@@ -139,11 +139,11 @@
     },
     {
       "language": "Spanish",
-      "fluency": "Intermediate",
+      "fluency": "Intermediate"
     },
     {
       "language": "French",
-      "fluency": "Intermediate",
+      "fluency": "Intermediate"
     }
   ],
   "interests": [

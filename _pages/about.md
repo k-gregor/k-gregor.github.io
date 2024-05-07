@@ -8,7 +8,7 @@ profile:
   align: left
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: 
+  more_info:
 
 news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -19,4 +19,3 @@ Hi there, my name is Konstantin! After studies in mathematics and computer scien
 <br/><br/>
 <b>Address:</b> Technical University of Munich, Hans-Carl-von-Carlowitz-Platz 2, 85354 Freising, Germany
 <br/><br/>
-
