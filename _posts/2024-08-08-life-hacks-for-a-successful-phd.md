@@ -25,11 +25,11 @@ During your PhD, you will need to store loads of data and you can absolutely not
 when you quickly need to free up space in order to store a new dataset.
 Do yourself a favor and free yourself from this risk (and the time it needs to figure out what data you can remove to make space)
 by getting a large hard drive for your laptop. Large and fast SSDs are absolutely affordable now (potentially your employer will
-also pay for this!), so go ahead and get one, like this 4TB SSD: https://amzn.to/3WUWcUx . Note: this is an affiliate link,
+also pay for this!), so go ahead and get one, like this [4TB internal SSD](https://amzn.to/3WUWcUx). Note: this is an affiliate link,
 by buying it through that link, you help me maintain this blog =)
 
 In addition, get yourself a large external hard drive where you do regular backups. Apart from an online backup tool like OneDrive or pcloud, 
-I'd recommend to to regular "hard copy" backups. The external hard drive should have the same size as your internal one. I am using this one: https://amzn.to/3YCP8xc
+I'd recommend to to regular "hard copy" backups. The external hard drive should have the same size as your internal one. I am using [this one](https://amzn.to/3YCP8xc).
 
 
 # Hack 2 - Use the Pomodoro technique
