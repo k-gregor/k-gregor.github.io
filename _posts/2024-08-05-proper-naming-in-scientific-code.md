@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Proper variable naming
+title: Proper variable naming in programming
 date: 2024-08-05 15:09:00
 description: A trivial yet sometimes overlooked aspect of making your code readable
 tags: code
