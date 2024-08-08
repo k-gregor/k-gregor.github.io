@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 9 life hacks for a successful PhD (or other knowledge work)
-date: 2024-08-05 15:09:00
+date: 2024-08-08 15:09:00
 description: With these tips you can supercharge your PhD or working experience
 tags: phd
 categories: phd
