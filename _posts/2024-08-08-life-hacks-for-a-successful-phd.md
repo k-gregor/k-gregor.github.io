@@ -14,7 +14,7 @@ more than just tips) that really helped me succeed at my PhD and that you might 
 These will also be helpful for any other type of "brain work" like doing a Postdoc or working in the software industry.
 Let's dive right in!
 
-# Hack 1 - Get some large hard drives
+# Hack 1 - Get some really large hard drives
 
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/harddrive.jpg" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
 <div class="caption">

@@ -17,7 +17,7 @@
 - title: Education
   type: time_table
   contents:
-    - title: PhD
+    - title: PhD (summa cum laude)
       institution: Technical University Munich, Freising, Germany
       year: 2020 - 2024
       description:
@@ -40,6 +40,10 @@
 - title: Experience
   type: time_table
   contents:
+    - title: PostDoc
+      institution: Technical University Munich, Freising, Germany
+      year: 2024 - now
+      description: I am currently continuing my research at TUM concerning the development of land-use strategies under climate change.
     - title: (Senior) Software Developer
       institution: TNG Technology Consulting
       year: 2014 - 2020
