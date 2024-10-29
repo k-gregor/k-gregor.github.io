@@ -244,6 +244,7 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
+  - jekyll-analytics
 
 # Sitemap settings
 defaults:
@@ -597,3 +598,7 @@ jsonresume:
   - languages
   - interests
   - references
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: G-12YX5QG8PE          # Required - replace with your tracking id
+    anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
