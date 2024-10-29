@@ -16,7 +16,7 @@ social: true # includes social icons at the bottom of the page
 ---
 
 Hi there, my name is Konstantin! After studies in mathematics and computer science and six years in the software development industry, I changed paths to work in climate science. In my PhD, I combined vegetation and climate modeling with robust optimization to investigate options for climate change mitigation, adaptation, and ecosystem service provision under uncertain future climate.
-Furthermore, I offer courses in software engineering for scientists.
+Furthermore, I offer [courses]({% link _pages/courses.md %}) on software engineering topics for scientists.
 <br/><br/>
 <b>Address:</b> Technical University of Munich, Hans-Carl-von-Carlowitz-Platz 2, 85354 Freising, Germany
 <br/><br/>
