@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://k-gregor.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://k-gregor.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-10-29T09:23:16+00:00</updated><id>https://k-gregor.github.io/feed.xml</id><title type="html">blank</title><subtitle>Personal website of Konstantin Gregor:. </subtitle><entry><title type="html">Writing good code 2 - the SOLID principles applied to scientific code</title><link href="https://k-gregor.github.io/blog/2024/good-code-2-solid-principles/" rel="alternate" type="text/html" title="Writing good code 2 - the SOLID principles applied to scientific code"/><published>2024-10-27T15:09:00+00:00</published><updated>2024-10-27T15:09:00+00:00</updated><id>https://k-gregor.github.io/blog/2024/good-code-2-solid-principles</id><content type="html" xml:base="https://k-gregor.github.io/blog/2024/good-code-2-solid-principles/"><![CDATA[<p>In my post about <a href="/blog/2024/good-code-1-proper-naming-in-scientific-code/">variable naming and function extraction</a> I tried to convey how simple it is to make code readable and understandable.</p> <p>Tthere are a few other software development paradigms and principles that aid in creating such understandable, but also maintainable, extendable, and testable code. Five core principles for object-oriented software design have been developed by Robert Martin and later termed by the acronym SOLID by Michael Feathers (Martin, 2000). These principles have been developed for agile software development where adaptations and new features have to be implemented in fast iterations. This is obviously not usually the case in scientific modeling. Nevertheless, they can be helpful also for scientific code because they help in making code more testable and maintainable, which is why I want to explain them here.</p> <h1 id="the-solid-principles-of-object-oriented-programming-languages">The SOLID principles of object-oriented programming languages</h1> <p>The five SOLID principles are the following:</p> <ol> <li>The <strong>S</strong>ingle responsibilty principle states that classes (or functions) should be responsible for one thing only. This allows clear distinction of what is done where.</li> <li>The <strong>O</strong>pen-closed principle constitutes that code should be open for extension (allowing new functionality) but closed to modification (the extension should not require modification of the existing code).</li> <li>The <strong>L</strong>iskov substitution principle formalizes proper usage of inheritance.</li> <li>The <strong>I</strong>nterface segregation principle defines that the interfaces between modules should be kept as small as possible to restrict unnecessary access, thereby limiting room for erronous behavior.</li> <li>The <strong>D</strong>ependency inversion principle states how to deal with modules depending on one another and how to handle dependencies for better testability.</li> </ol> <p>By the way, although they were developed for object-oriented programming, the SOLID principles are also applicable (in adapted form) to functional programming (see, e.g., Kocik (2022)).</p> <p>Here they are in more detail:</p> <h2 id="1-single-responsibility-principle">1. Single responsibility principle</h2> <p>Extracting well-named functions can be helpful to make code more understandable, maintainable, and testable. This is achieved best when these functions are not overloaded but ideally do <strong>one particular thing only</strong>. This idea is called the <em>single responsibility principle</em>. The principle was introduced for classes but holds for functions as well. A class that computes the radiation budget at the Earth’s surface should not also compute the water budget. These two things are of course heavily related, but should be split up if possible.</p> <p>Look at the following example code snippet adapted from the dynamic vegetation model LPJ-GUESS (Smith et al., 2014). All logic is divided into multiple functions that get called one after the other. This is a good example of the single responsibility principle where each function deals with one thing.</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://k-gregor.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://k-gregor.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-11-04T15:44:54+00:00</updated><id>https://k-gregor.github.io/feed.xml</id><title type="html">blank</title><subtitle>Personal website of Konstantin Gregor:. </subtitle><entry><title type="html">Writing good code 2 - the SOLID principles applied to scientific code</title><link href="https://k-gregor.github.io/blog/2024/good-code-2-solid-principles/" rel="alternate" type="text/html" title="Writing good code 2 - the SOLID principles applied to scientific code"/><published>2024-10-27T15:09:00+00:00</published><updated>2024-10-27T15:09:00+00:00</updated><id>https://k-gregor.github.io/blog/2024/good-code-2-solid-principles</id><content type="html" xml:base="https://k-gregor.github.io/blog/2024/good-code-2-solid-principles/"><![CDATA[<p>In my post about <a href="/blog/2024/good-code-1-proper-naming-in-scientific-code/">variable naming and function extraction</a> I tried to convey how simple it is to make code readable and understandable.</p> <p>Tthere are a few other software development paradigms and principles that aid in creating such understandable, but also maintainable, extendable, and testable code. Five core principles for object-oriented software design have been developed by Robert Martin and later termed by the acronym SOLID by Michael Feathers (Martin, 2000). These principles have been developed for agile software development where adaptations and new features have to be implemented in fast iterations. This is obviously not usually the case in scientific modeling. Nevertheless, they can be helpful also for scientific code because they help in making code more testable and maintainable, which is why I want to explain them here.</p> <h1 id="the-solid-principles-of-object-oriented-programming-languages">The SOLID principles of object-oriented programming languages</h1> <p>The five SOLID principles are the following:</p> <ol> <li>The <strong>S</strong>ingle responsibilty principle states that classes (or functions) should be responsible for one thing only. This allows clear distinction of what is done where.</li> <li>The <strong>O</strong>pen-closed principle constitutes that code should be open for extension (allowing new functionality) but closed to modification (the extension should not require modification of the existing code).</li> <li>The <strong>L</strong>iskov substitution principle formalizes proper usage of inheritance.</li> <li>The <strong>I</strong>nterface segregation principle defines that the interfaces between modules should be kept as small as possible to restrict unnecessary access, thereby limiting room for erronous behavior.</li> <li>The <strong>D</strong>ependency inversion principle states how to deal with modules depending on one another and how to handle dependencies for better testability.</li> </ol> <p>By the way, although they were developed for object-oriented programming, the SOLID principles are also applicable (in adapted form) to functional programming (see, e.g., Kocik (2022)).</p> <p>Here they are in more detail:</p> <h2 id="1-single-responsibility-principle">1. Single responsibility principle</h2> <p>Extracting well-named functions can be helpful to make code more understandable, maintainable, and testable. This is achieved best when these functions are not overloaded but ideally do <strong>one particular thing only</strong>. This idea is called the <em>single responsibility principle</em>. The principle was introduced for classes but holds for functions as well. A class that computes the radiation budget at the Earth’s surface should not also compute the water budget. These two things are of course heavily related, but should be split up if possible.</p> <p>Look at the following example code snippet adapted from the dynamic vegetation model LPJ-GUESS (Smith et al., 2014). All logic is divided into multiple functions that get called one after the other. This is a good example of the single responsibility principle where each function deals with one thing.</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9,14 +9,14 @@
 9
 10
 </pre></td><td class="code"><pre><span class="kt">void</span> <span class="nf">simulateDay</span><span class="p">()</span> <span class="p">{</span>
-	<span class="p">...</span>
-	<span class="n">leafPhenology</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
-	<span class="n">interception</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
-	<span class="n">initialInfiltration</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
-	<span class="n">canopyGasExchange</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
-	<span class="n">irrigation</span><span class="p">(</span><span class="n">patch</span><span class="p">);</span>
-	<span class="n">soilwater</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
-	<span class="p">...</span>
+<span class="p">...</span>
+<span class="n">leafPhenology</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
+<span class="n">interception</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
+<span class="n">initialInfiltration</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
+<span class="n">canopyGasExchange</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
+<span class="n">irrigation</span><span class="p">(</span><span class="n">patch</span><span class="p">);</span>
+<span class="n">soilwater</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">climate</span><span class="p">);</span>
+<span class="p">...</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> This example code adapted from the dynamic vegetation model LPJ-GUESS nicely extracts code into different functions with clear names that are responsible for one thing. </div> <h2 id="2-open-closed-principle">2. Open-closed principle</h2> <p>Code should be open for extension, but closed for modification. This means, that the class itself should be able to deal with new requirements without changing anything within that class.</p> <p>Consider the following example adapted from LPJ-GUESS computing leaf phenology. The code is technically not open for extension. If a new plant lifeform is added, we need to modify this code and add another <code class="language-plaintext highlighter-rouge">if</code>.</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -29,14 +29,14 @@
 9
 10
 </pre></td><td class="code"><pre><span class="kt">void</span> <span class="nf">leafPhenology</span><span class="p">(</span><span class="n">Plant</span> <span class="n">plant</span><span class="p">,</span> <span class="n">Climate</span> <span class="n">climate</span><span class="p">){</span>
-	<span class="c1">// ...</span>
-	<span class="kt">double</span> <span class="n">phenology</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">plant</span><span class="p">.</span><span class="n">lifeform</span> <span class="o">==</span> <span class="n">TREE</span><span class="p">){</span>
-		<span class="n">phenology</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="n">climate</span><span class="p">.</span><span class="n">gdd5</span> <span class="o">-</span> <span class="n">plant</span><span class="p">.</span><span class="n">gdd0</span><span class="p">[</span><span class="n">climate</span><span class="p">.</span><span class="n">chilldays</span><span class="p">])</span> <span class="o">/</span> <span class="n">pft</span><span class="p">.</span><span class="n">phengdd5ramp</span><span class="p">);</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">plant</span><span class="p">.</span><span class="n">lifeform</span> <span class="o">==</span> <span class="n">GRASS</span><span class="p">)</span> <span class="p">{</span>  
-		<span class="n">phenology</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">climate</span><span class="p">.</span><span class="n">gdd5</span> <span class="o">/</span> <span class="n">plant</span><span class="p">.</span><span class="n">phengdd5ramp</span><span class="p">);</span>
-	<span class="p">}</span>
-	<span class="c1">// ...</span>
+<span class="c1">// ...</span>
+<span class="kt">double</span> <span class="n">phenology</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">plant</span><span class="p">.</span><span class="n">lifeform</span> <span class="o">==</span> <span class="n">TREE</span><span class="p">){</span>
+<span class="n">phenology</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="n">climate</span><span class="p">.</span><span class="n">gdd5</span> <span class="o">-</span> <span class="n">plant</span><span class="p">.</span><span class="n">gdd0</span><span class="p">[</span><span class="n">climate</span><span class="p">.</span><span class="n">chilldays</span><span class="p">])</span> <span class="o">/</span> <span class="n">pft</span><span class="p">.</span><span class="n">phengdd5ramp</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">plant</span><span class="p">.</span><span class="n">lifeform</span> <span class="o">==</span> <span class="n">GRASS</span><span class="p">)</span> <span class="p">{</span>  
+ <span class="n">phenology</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">climate</span><span class="p">.</span><span class="n">gdd5</span> <span class="o">/</span> <span class="n">plant</span><span class="p">.</span><span class="n">phengdd5ramp</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption">This code violates the open-closed principle.</div> <p>Here, it could be better to make use of inheritance in object-oriented languages. One could introduce classes <code class="language-plaintext highlighter-rouge">Tree</code> and <code class="language-plaintext highlighter-rouge">Grass</code> that implement an interface (or extend an abstract class) <code class="language-plaintext highlighter-rouge">Plant</code> that has a method <code class="language-plaintext highlighter-rouge">phenology()</code>. Then, we can call <code class="language-plaintext highlighter-rouge">plant.phenology()</code> directly without having to check its type again. And adding a new type of plant would not change any code in the adapted snippet below. The new plant would implement their own <code class="language-plaintext highlighter-rouge">phenology()</code> function:</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -60,25 +60,25 @@
 20
 21
 </pre></td><td class="code"><pre><span class="kt">void</span> <span class="nf">leafPhenology</span><span class="p">(</span><span class="n">Plant</span> <span class="n">plant</span><span class="p">,</span> <span class="n">Climate</span> <span class="n">climate</span><span class="p">){</span>
-	<span class="c1">// ...</span>
-	<span class="kt">double</span> <span class="n">phenology</span> <span class="o">=</span> <span class="n">plant</span><span class="p">.</span><span class="n">phenology</span><span class="p">(</span><span class="n">climate</span><span class="p">);</span>
-	<span class="c1">// ...</span>
+<span class="c1">// ...</span>
+<span class="kt">double</span> <span class="n">phenology</span> <span class="o">=</span> <span class="n">plant</span><span class="p">.</span><span class="n">phenology</span><span class="p">(</span><span class="n">climate</span><span class="p">);</span>
+<span class="c1">// ...</span>
 <span class="p">}</span>
 
 <span class="k">public</span> <span class="n">interface</span> <span class="n">Plant</span> <span class="p">{</span>
-	<span class="k">public</span> <span class="kt">double</span> <span class="n">phenology</span><span class="p">(</span><span class="n">Climate</span> <span class="n">climate</span><span class="p">);</span>
+<span class="k">public</span> <span class="kt">double</span> <span class="n">phenology</span><span class="p">(</span><span class="n">Climate</span> <span class="n">climate</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">public</span> <span class="k">class</span> <span class="nc">Tree</span> <span class="n">extends</span> <span class="n">Plant</span> <span class="p">{</span>
-	<span class="k">public</span> <span class="kt">double</span> <span class="n">phenology</span><span class="p">(</span><span class="n">Climate</span> <span class="n">climate</span><span class="p">){</span>
-		<span class="k">return</span> <span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="n">climate</span><span class="p">.</span><span class="n">gdd5</span> <span class="o">-</span> <span class="n">gdd0</span><span class="p">[</span><span class="n">climate</span><span class="p">.</span><span class="n">chilldays</span><span class="p">])</span> <span class="o">/</span> <span class="n">phengdd5ramp</span><span class="p">);</span>
-	<span class="p">}</span>
+<span class="k">public</span> <span class="kt">double</span> <span class="n">phenology</span><span class="p">(</span><span class="n">Climate</span> <span class="n">climate</span><span class="p">){</span>
+<span class="k">return</span> <span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="n">climate</span><span class="p">.</span><span class="n">gdd5</span> <span class="o">-</span> <span class="n">gdd0</span><span class="p">[</span><span class="n">climate</span><span class="p">.</span><span class="n">chilldays</span><span class="p">])</span> <span class="o">/</span> <span class="n">phengdd5ramp</span><span class="p">);</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">public</span> <span class="k">class</span> <span class="nc">Grass</span> <span class="n">extends</span> <span class="n">Plant</span> <span class="p">{</span>
-	<span class="k">public</span> <span class="kt">double</span> <span class="n">phenology</span><span class="p">(</span><span class="n">Climate</span> <span class="n">climate</span><span class="p">){</span>
-		<span class="k">return</span> <span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">climate</span><span class="p">.</span><span class="n">gdd5</span> <span class="o">/</span> <span class="n">phengdd5ramp</span><span class="p">);</span>
-	<span class="p">}</span>
+<span class="k">public</span> <span class="kt">double</span> <span class="n">phenology</span><span class="p">(</span><span class="n">Climate</span> <span class="n">climate</span><span class="p">){</span>
+<span class="k">return</span> <span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">climate</span><span class="p">.</span><span class="n">gdd5</span> <span class="o">/</span> <span class="n">phengdd5ramp</span><span class="p">);</span>
+<span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> This example is open for extension and closed for modification. The function `leafPhenology` will not need to be adapted if a new type of plant is introduced.</div> <p>This way of organizing the code is more maintainable, because we do not need to touch <code class="language-plaintext highlighter-rouge">leafPhenology</code> again if we want to change the behavior of <code class="language-plaintext highlighter-rouge">Tree</code>s or <code class="language-plaintext highlighter-rouge">Grass</code>es or add a new type of <code class="language-plaintext highlighter-rouge">Plant</code>. It needs to be noted, however, that for a single such situation it is probably not worth designing a new class hierarchy. Creating a class hierarchy needs to be well thought out, because it will be hard to change later. However, if you find yourself having to write similar if-else-statements around the model code, creating a class abstraction is probably sensible.</p> <h2 id="3-liskov-substitution-principle">3. Liskov substitution principle</h2> <p>A benefit of object-oriented programming is the concept of inheritance, where a subclass is derived from a superclass to extend the behavior of that superclass. We have seen this above already in the Open-close principle.</p> <p>The introduced <code class="language-plaintext highlighter-rouge">Plant</code> interface (it could also be a class) will have sub-types like <code class="language-plaintext highlighter-rouge">Tree</code>, which will in turn have other subtypes, for instance <code class="language-plaintext highlighter-rouge">NeedleleavedTree</code> and <code class="language-plaintext highlighter-rouge">BroadleavedTree</code>. In this regard, the Liskov substitution principle is the principle guaranteeing that no inconsistent behavior happens when creating such a hierarchy. It states that if class A is a subtype of B, we should be able to use objects of type A and B interchangeably without breaking the behavior of the model.</p> <p>Basically this boils down to designing a proper inheritance hierarchy. An example violating this rule is found below.</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -91,12 +91,12 @@
 9
 10
 </pre></td><td class="code"><pre><span class="k">class</span> <span class="nc">BroadleavedTree</span> <span class="p">{</span>
-	<span class="kt">void</span> <span class="n">leafOut</span><span class="p">(){</span>
-		<span class="c1">// grow broad leaves</span>
-	<span class="p">}</span>
-	<span class="kt">void</span> <span class="nf">senescence</span><span class="p">(){</span>
-		<span class="c1">// drop leaves in autumn</span>
-	<span class="p">}</span>
+<span class="kt">void</span> <span class="n">leafOut</span><span class="p">(){</span>
+<span class="c1">// grow broad leaves</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">senescence</span><span class="p">(){</span>
+<span class="c1">// drop leaves in autumn</span>
+<span class="p">}</span>
 <span class="p">}</span>
 <span class="k">class</span> <span class="nc">CommonOak</span> <span class="n">extends</span> <span class="n">BroadleavedTree</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 <span class="k">class</span> <span class="nc">HolmOak</span> <span class="n">extends</span> <span class="n">BroadleavedTree</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
@@ -113,13 +113,13 @@
 11
 12
 </pre></td><td class="code"><pre><span class="k">class</span> <span class="nc">BroadleavedTree</span> <span class="p">{</span>
-	<span class="kt">void</span> <span class="n">leafOut</span><span class="p">(){</span>
-		<span class="c1">// grow broad leaves</span>
-	<span class="p">}</span>
+<span class="kt">void</span> <span class="n">leafOut</span><span class="p">(){</span>
+<span class="c1">// grow broad leaves</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="n">interface</span> <span class="n">Summergreen</span> <span class="p">{</span>
-	<span class="kt">void</span> <span class="n">senescence</span><span class="p">(){</span> <span class="p">...</span> <span class="p">}</span>
+<span class="kt">void</span> <span class="n">senescence</span><span class="p">(){</span> <span class="p">...</span> <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">class</span> <span class="nc">CommonOak</span> <span class="n">extends</span> <span class="n">BroadleavedTree</span> <span class="n">implements</span> <span class="n">Summergreen</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
@@ -143,22 +143,22 @@
 17
 18
 </pre></td><td class="code"><pre><span class="k">public</span> <span class="n">interface</span> <span class="n">Plant</span><span class="p">{</span>
-	<span class="n">takeUpWater</span><span class="p">();</span>
-	<span class="n">phenology</span><span class="p">();</span>
-	<span class="n">doPhotosynthesis</span><span class="p">();</span>
-	<span class="n">respire</span><span class="p">();</span>
-	<span class="n">grow</span><span class="p">();</span>
-	<span class="n">die</span><span class="p">();</span>
-	<span class="n">harvest</span><span class="p">();</span>
-	<span class="n">sow</span><span class="p">();</span>
-	<span class="n">irrigate</span><span class="p">();</span>
+<span class="n">takeUpWater</span><span class="p">();</span>
+<span class="n">phenology</span><span class="p">();</span>
+<span class="n">doPhotosynthesis</span><span class="p">();</span>
+<span class="n">respire</span><span class="p">();</span>
+<span class="n">grow</span><span class="p">();</span>
+<span class="n">die</span><span class="p">();</span>
+<span class="n">harvest</span><span class="p">();</span>
+<span class="n">sow</span><span class="p">();</span>
+<span class="n">irrigate</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="k">public</span> <span class="k">class</span> <span class="nc">Cropland</span> <span class="p">{</span>
-	<span class="k">public</span> <span class="kt">void</span> <span class="n">prepareField</span><span class="p">(</span><span class="n">Plant</span> <span class="n">plant</span><span class="p">){</span>
-	  <span class="c1">// calling functions like plant.doPhotosynthesis() or plant.respire()</span>
-	  <span class="c1">// would be possible here. But is this reasonable?</span>
-	<span class="p">}</span>
+<span class="k">public</span> <span class="kt">void</span> <span class="n">prepareField</span><span class="p">(</span><span class="n">Plant</span> <span class="n">plant</span><span class="p">){</span>
+<span class="c1">// calling functions like plant.doPhotosynthesis() or plant.respire()</span>
+<span class="c1">// would be possible here. But is this reasonable?</span>
+<span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> Example of a potentially too large interface. The `Cropland` class should not be able to deal with low-level aspects of a `Plant`. </div> <p>Every part of the code receiving a <code class="language-plaintext highlighter-rouge">Plant</code> now can do anything with that object. According to <em>interface segregation</em>, we should hide unneeded details. In this example, it would make sense to extract at least one other interface:</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -183,26 +183,26 @@
 21
 22
 </pre></td><td class="code"><pre><span class="k">public</span> <span class="n">interface</span> <span class="n">Plant</span><span class="p">{</span>
-	<span class="n">takeUpWater</span><span class="p">();</span>
-	<span class="n">phenology</span><span class="p">();</span>
-	<span class="n">doPhotosynthesis</span><span class="p">();</span>
-	<span class="n">respire</span><span class="p">();</span>
-	<span class="n">grow</span><span class="p">();</span>
-	<span class="n">die</span><span class="p">();</span>
+<span class="n">takeUpWater</span><span class="p">();</span>
+<span class="n">phenology</span><span class="p">();</span>
+<span class="n">doPhotosynthesis</span><span class="p">();</span>
+<span class="n">respire</span><span class="p">();</span>
+<span class="n">grow</span><span class="p">();</span>
+<span class="n">die</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="k">public</span> <span class="n">interface</span> <span class="n">ManageablePlant</span><span class="p">{</span>
-	<span class="n">harvest</span><span class="p">();</span>
-	<span class="n">sow</span><span class="p">();</span>
-	<span class="n">irrigate</span><span class="p">();</span>
+<span class="n">harvest</span><span class="p">();</span>
+<span class="n">sow</span><span class="p">();</span>
+<span class="n">irrigate</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="k">public</span> <span class="k">class</span> <span class="nc">Cropland</span> <span class="p">{</span>
-	<span class="k">public</span> <span class="kt">void</span> <span class="n">prepareField</span><span class="p">(</span><span class="n">ManageablePlant</span> <span class="n">plant</span><span class="p">){</span>
-	  <span class="c1">// plant.doPhotosynthesis() or plant.respire() can not be called here</span>
-	  <span class="c1">// only methods of ManageablePlant (i.e., methods relevant to land use) can be</span>
-	  <span class="c1">// called here, e.g., plant.sow() or plant.harvest()</span>
-	<span class="p">}</span>
+<span class="k">public</span> <span class="kt">void</span> <span class="n">prepareField</span><span class="p">(</span><span class="n">ManageablePlant</span> <span class="n">plant</span><span class="p">){</span>
+<span class="c1">// plant.doPhotosynthesis() or plant.respire() can not be called here</span>
+<span class="c1">// only methods of ManageablePlant (i.e., methods relevant to land use) can be</span>
+<span class="c1">// called here, e.g., plant.sow() or plant.harvest()</span>
+<span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> An example of a segregation of the interfaces of the previous code snippet. In a land use component, only the functions of `ManageablePlant` should be visible. </div> <p>In a land use component of an earth system model, we then only need to pass the <code class="language-plaintext highlighter-rouge">ManageablePlant</code> and we can be sure that only the functions of that interface are called. The land use component will not be able to mess with other aspects which it is not responsible for, because these are hidden. For instance, <code class="language-plaintext highlighter-rouge">doPhotosynthesis</code> should probably not be called from any land use parts of the model and is therefore not part of the interface <code class="language-plaintext highlighter-rouge">ManageablePlant</code>.</p> <p>In a programming language without interfaces, similar results may be achieved through other means, for instance virtual methods and abstract classes.</p> <h2 id="5-dependency-inversion">5. Dependency inversion</h2> <p>This principle aims at decoupling modules from one another. High level logic should not depend on a particular implementation at a low level. In regular software this is essential to switch out modules easily, e.g. replace a data source.</p> <p>This is probably not a crucial thing in scientific code and models. However, there is one critical benefit of this principle: It makes the code more testable, because we can plug in and test things easily because you can pass things directly. A negative example is shown in the following code snippet. The <code class="language-plaintext highlighter-rouge">simulateClimateProjection</code>-function is hard to test, because we cannot easily test what happens under various climates.</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -214,21 +214,15 @@
 8
 9
 10
-11
-12
-13
 </pre></td><td class="code"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">Gridcell</span><span class="p">{</span>
-	
-	<span class="k">private</span> <span class="n">Climate</span> <span class="n">climate</span><span class="p">;</span>
-	
-	<span class="k">public</span> <span class="n">Gridcell</span><span class="p">(){</span>
-		<span class="k">this</span><span class="p">.</span><span class="n">climate</span> <span class="o">=</span> <span class="n">readClimateFromFile</span><span class="p">();</span>
-	<span class="p">}</span>
-	
-	<span class="kt">void</span> <span class="nf">simulateClimateProjection</span><span class="p">(){</span>
-		<span class="kt">double</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">climate</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">();</span>
-		<span class="p">...</span>
-	<span class="p">}</span>
+<span class="k">private</span> <span class="n">Climate</span> <span class="n">climate</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">Gridcell</span><span class="p">(){</span>
+<span class="k">this</span><span class="p">.</span><span class="n">climate</span> <span class="o">=</span> <span class="n">readClimateFromFile</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">simulateClimateProjection</span><span class="p">(){</span>
+<span class="kt">double</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">climate</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> This code violates the dependency inversion principle. The high level class `Gridcell` depends on the implementation of `Climate`. </div> <p>An improved implementation is achieved by passing the climate through the constructor. In a testing environment, various climate objects can be created and passed.</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -240,21 +234,15 @@
 8
 9
 10
-11
-12
-13
 </pre></td><td class="code"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">Gridcell</span><span class="p">{</span>
-	
-	<span class="k">private</span> <span class="n">Climate</span> <span class="n">climate</span><span class="p">;</span>
-	
-	<span class="k">public</span> <span class="n">Gridcell</span><span class="p">(</span><span class="n">Climate</span> <span class="n">climate</span><span class="p">){</span>
-		<span class="k">this</span><span class="p">.</span><span class="n">climate</span> <span class="o">=</span> <span class="n">climate</span><span class="p">;</span>
-	<span class="p">}</span>
-	
-	<span class="kt">void</span> <span class="nf">simulateClimateProjection</span><span class="p">(){</span>
-		<span class="kt">double</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">climate</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">();</span>
-		<span class="p">...</span>
-	<span class="p">}</span>
+<span class="k">private</span> <span class="n">Climate</span> <span class="n">climate</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">Gridcell</span><span class="p">(</span><span class="n">Climate</span> <span class="n">climate</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="n">climate</span> <span class="o">=</span> <span class="n">climate</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">simulateClimateProjection</span><span class="p">(){</span>
+<span class="kt">double</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">climate</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> In this example, the dependency of `Gridcell` on `Climate` is being injected. `Gridcell` does not have to create the `Climate` itself because it is *injected*. This makes it easier to test: In a unit test, we can pass different climates and call `simulateClimateProjection()`. </div> <p>When testing the code, we can now simply insert our own <code class="language-plaintext highlighter-rouge">Climate</code> when creating a <code class="language-plaintext highlighter-rouge">Gridcell</code> and easily test what happens when we run <code class="language-plaintext highlighter-rouge">simulateClimateProjection</code> after having passed various climates.</p> <h1 id="conclusion">Conclusion</h1> <p>For a scientist, this was probably quite the deep-dive into topics of software engineering. However, I believe that one needs to simple remember the gist of these SOLID principles:</p> <ol> <li>Code portions should have one responsibility and not do hundred things</li> <li>Code should be designed that modifications or extensions need minimal adaptation of code</li> <li>Code that can take different arguments should work for all types of arguments that they allow</li> <li>Internal logic that can be hidden should be hidden</li> <li>Code at a high level should be designed in a way that it is independent from implementations at low levels.</li> </ol> <p>All this also makes code more understandable, maintainable, and testable.</p> <h1 id="references">References</h1> <ul> <li>Kocik, M. (2022). SOLID principles in Functional Programming. <a href="https://medium.com/@mkocik/solid-principles-in-functional-programming-b9b83aeddf80">https://medium.com/@mkocik/solid-principles-in-functional-programming-b9b83aeddf80</a></li> <li>Martin, R. C. (2000). Design Principles and Design Patterns. Object Mentor. <a href="http://labs.cs.upt.ro/labs/ip2/html/lectures/2/res/Martin-PrinciplesAndPatterns.PDF">http://labs.cs.upt.ro/labs/ip2/html/lectures/2/res/Martin-PrinciplesAndPatterns.PDF</a></li> <li>Smith, B., Wårlind, D., Arneth, A., Hickler, T., Leadley, P., Siltberg, J., &amp; Zaehle, S. (2014). Implications of incorporating N cycling and N limitations on primary production in an individual-based dynamic vegetation model. Biogeosciences, 11(7), 2027–2054. <a href="https://doi.org/10.5194/bg-11-2027-2014">https://doi.org/10.5194/bg-11-2027-2014</a></li> </ul>]]></content><author><name></name></author><category term="code"/><category term="code"/><summary type="html"><![CDATA[A discussion of the most important paradigms of professional software development and how they can help us write good code in science.]]></summary></entry><entry><title type="html">Writing good code 1 - Naming, comments, functions, and the DRY principle</title><link href="https://k-gregor.github.io/blog/2024/good-code-1-proper-naming-in-scientific-code/" rel="alternate" type="text/html" title="Writing good code 1 - Naming, comments, functions, and the DRY principle"/><published>2024-10-05T15:09:00+00:00</published><updated>2024-10-05T15:09:00+00:00</updated><id>https://k-gregor.github.io/blog/2024/good-code-1-proper-naming-in-scientific-code</id><content type="html" xml:base="https://k-gregor.github.io/blog/2024/good-code-1-proper-naming-in-scientific-code/"><![CDATA[<p>Scientists are not software developers, yet we often do write software. This could include simple data pre-processing scripts, complex data analyses, or full scientific models. Here I want to highlight some critical aspects of professional software development and how they could be applied in scientific programming.</p> <h2 id="proper-naming">Proper Naming</h2> <p>A trivial yet essential aspect of understandable code is proper naming. In scientific code, one often comes across variables called <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">y</code>, <code class="language-plaintext highlighter-rouge">xx</code>, or <code class="language-plaintext highlighter-rouge">ys</code>. But there is no cost in using descriptive names such as <code class="language-plaintext highlighter-rouge">years_since_2000</code> or <code class="language-plaintext highlighter-rouge">mean_surface_temperatures</code> which immediately indicate what they contain. Exceptions are known formulas, where the variable names should be as in the formula. For instance, \(E=mc^2\) does not need to be written as <code class="language-plaintext highlighter-rouge">energy = mass * light_speed * light_speed</code>.</p> <p>Proper variable naming is the number one step to making your code readable and understandable. Check out the following code. It is simple, yet you have no idea what is going on there:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -265,49 +253,49 @@
 7
 8
 9
-</pre></td><td class="code"><pre>  <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-  <span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-  <span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-  
-  <span class="n">a</span> <span class="o">=</span> <span class="mf">0.02</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-  <span class="n">yy</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">xx</span>
-  <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">);</span>
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">b</span>\<span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a</span><span class="p">)</span>\<span class="o">*</span>\<span class="o">*</span><span class="n">xx</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></figure> <p>Comments might make this code more understandable. But still, if we use the variable <code class="language-plaintext highlighter-rouge">a</code> at another point in the code, we’d have no idea what we’re dealing with and have to go back to the declaration to find out:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="code"><pre>  <span class="n">a</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1"># interest rate
-</span>  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># initial investment
-</span>  <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># years
-</span>  <span class="n">yy</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">xx</span> <span class="c1"># money value after x years
-</span>  <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">);</span>
+</pre></td><td class="code"><pre><span class="n">a</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1"># interest rate
+</span><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># initial investment
+</span><span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># years
+</span><span class="n">yy</span> <span class="o">=</span> <span class="n">b</span>\<span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a</span><span class="p">)</span>\<span class="o">*</span>\<span class="o">*</span><span class="n">xx</span> <span class="c1"># money value after x years
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></figure> <p>With proper variable names, the code is easy to understand:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="code"><pre>  <span class="n">interest_rate</span> <span class="o">=</span> <span class="mf">0.02</span>
-  <span class="n">initial_investment</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="n">time_years</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-  <span class="n">all_that_money_in_my_bank_account</span> <span class="o">=</span> <span class="n">initial_investment</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="n">time_years</span>
-  <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">time_years</span><span class="p">,</span> <span class="n">all_that_money_in_my_bank_account</span><span class="p">);</span>
+</pre></td><td class="code"><pre><span class="n">interest_rate</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">initial_investment</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">time_years</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">all_that_money_in_my_bank_account</span> <span class="o">=</span> <span class="n">initial_investment</span>\<span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">interest_rate</span><span class="p">)</span>\<span class="o">*</span>\<span class="o">*</span><span class="n">time_years</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">time_years</span><span class="p">,</span> <span class="n">all_that_money_in_my_bank_account</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></figure> <h2 id="avoid-magic-numbers">Avoid magic numbers</h2> <p>Another trivial, yet often ignored, rule is to avoid “magic numbers”. These are numbers in the code that are not explained. For instance, what is going on here?</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="code"><pre>  <span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="o">*</span> <span class="mi">86400</span>
-  <span class="n">emissions</span> <span class="o">=</span> <span class="n">emissions</span> <span class="o">*</span> <span class="mf">44.01</span><span class="o">/</span><span class="mf">12.011</span>
+</pre></td><td class="code"><pre><span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="n">_</span> <span class="mi">86400</span>
+<span class="n">emissions</span> <span class="o">=</span> <span class="n">emissions</span> <span class="n">_</span> <span class="mf">44.01</span><span class="o">/</span><span class="mf">12.011</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> It is hard to understand what this code is doing. What to these magic numbers like 44.01 or 86400 mean? </div> <p>Instead of writing numbers directly it is much clearer to store the numbers in understandable constants like so:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="code"><pre>  <span class="n">SECONDS_PER_DAY</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>
-  <span class="n">time_days</span> <span class="o">=</span> <span class="n">time_seconds</span> <span class="o">*</span> <span class="n">SECONDS_PER_DAY</span>
+</pre></td><td class="code"><pre><span class="n">SECONDS_PER_DAY</span> <span class="o">=</span> <span class="mi">60</span> <span class="n">_</span> <span class="mi">60</span> <span class="n">_</span> <span class="mi">24</span>
+<span class="n">time_days</span> <span class="o">=</span> <span class="n">time_seconds</span> \<span class="o">*</span> <span class="n">SECONDS_PER_DAY</span>
 
-  <span class="n">CONVERSION_C_TO_CO2</span> <span class="o">=</span> <span class="mf">44.01</span><span class="o">/</span><span class="mf">12.011</span>
-  <span class="n">co2_emissions</span> <span class="o">=</span> <span class="n">c_emissions</span> <span class="o">*</span> <span class="n">CONVERSION_C_TO_CO2</span>
+<span class="n">CONVERSION_C_TO_CO2</span> <span class="o">=</span> <span class="mf">44.01</span><span class="o">/</span><span class="mf">12.011</span>
+<span class="n">co2_emissions</span> <span class="o">=</span> <span class="n">c_emissions</span> \<span class="o">*</span> <span class="n">CONVERSION_C_TO_CO2</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> The code is much clearer when magic numbers are extracted into well-named constants. </div> <h2 id="perks-and-pitfalls-of-comments">Perks and Pitfalls of comments</h2> <p>Comments are helpful to explain code, as was also shown above. However, it often happens that comments are outdated because people forget to adapt them when code is changed. Therefore, proper naming should make the code the first means of documentation and render additional comments unnecessary.</p> <p>In scientific models, comments can be used to add citations as to where a formula comes from. Furthermore, comments can be vital in explaining complex parts of the code. However, it needs to be kept in mind that comments are maintained with the rest of the code to avoid inconsistencies between the two that would lead to confusion. At the end of the article, there will be an example containing useful commenting.</p> <p>A final note is that code should never be used <strong>“out-commented”</strong> as this will only lead to confusion why this code is currently not in use. Version control (like <code class="language-plaintext highlighter-rouge">git</code> or <code class="language-plaintext highlighter-rouge">svn</code>) allows deleting the code with a commit message explaining why it was deleted. If it happens that the code is needed again, this commit can be reverted.</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
@@ -316,20 +304,20 @@
 6
 7
 8
-</pre></td><td class="code"><pre>  <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">person_list</span><span class="p">:</span>
-      <span class="n">person</span><span class="p">.</span><span class="nf">calculate_something</span><span class="p">()</span>
+</pre></td><td class="code"><pre><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">person_list</span><span class="p">:</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">calculate_something</span><span class="p">()</span>
 
       <span class="c1"># person.do_the_thing()
 </span>      <span class="c1"># person.money = 1000
-</span>    
+</span>
       <span class="n">person</span><span class="p">.</span><span class="n">money</span> <span class="o">=</span> <span class="mi">500</span>
       <span class="n">person</span><span class="p">.</span><span class="nf">do_other_thing</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> My buddy at my old job would call this a "Nonononono!". Other scientists (or you in 1 year!) seeing this code will not understand why we don't to **the thing** anymore, and why the `person` only gets 500 moneys now. Delete the code, write a proper commit message, the change will be easy to understand. </div> <h2 id="the-dry-principle-dont-repeat-yourself">The DRY Principle (Don’t Repeat Yourself)</h2> <p>Repetition in code is not only a source of clutter, but also a critical source of errors. If the same piece of code exists in multiple places of the model and needs changing, chances are that one forgets to change it in all places. Therefore, such code should be extracted into well-named functions with well-named parameters that can be called from anywhere from the model. When the logic needs changing, we only need to change it in one place. This is especially important for other developers who might have to adapt that code. Other than you, they might now know that they need to do the same change in multiple places! Well-named functions also make the code easier to read, understand, and test. For instance we can easily write a test that checks whether the code from above does what it is supposed to, when this code is extracted into a nice function:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="code"><pre>  <span class="k">def</span> <span class="nf">calculate_bank_account_value</span><span class="p">(</span><span class="n">initial_investment</span><span class="p">,</span> <span class="n">interest_rate</span><span class="p">,</span> <span class="n">time_in_years</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">initial_investment</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="n">time_in_years</span>
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">calculate_bank_account_value</span><span class="p">(</span><span class="n">initial_investment</span><span class="p">,</span> <span class="n">interest_rate</span><span class="p">,</span> <span class="n">time_in_years</span><span class="p">):</span>
+<span class="k">return</span> <span class="n">initial_investment</span>\<span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">interest_rate</span><span class="p">)</span>\<span class="o">*</span>\<span class="o">*</span><span class="n">time_in_years</span>
 </pre></td></tr></tbody></table></code></pre></figure> <p>In languages like Python you can even make use of the named function parameters to have a very understandable function call:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>  <span class="nf">calculate_bank_account_value</span><span class="p">(</span><span class="n">initial_investment</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">interest_rate</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">time_in_years</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></td><td class="code"><pre><span class="nf">calculate_bank_account_value</span><span class="p">(</span><span class="n">initial_investment</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">interest_rate</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">time_in_years</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure> <p>Another benefit is that such functions are easily testable. We’ll have another post on that topic soon.</p> <p>In the case of data processing workflows, things might be a bit different. You might have similar workflows for similar data inputs and the obvious thing is to simply copy the code and adapt it as necessary instead of making it generic. If it is only used once it might also be too much effort to spend lots of time on refactoring it into reusable functions. Nonetheless, the DRY principle should always be kept in mind. With modern IDEs, extraction of methods is also not a time-consuming task and it helps clarify that the code does what it’s supposed to do. This will help when workflows have to be run again, for instance when things pop during the review process of a paper.</p> <p>Another point where the DRY principle holds in science is when sharing code. Often, someone has a script that they can email to you that will do the data processing you need to do. But this is obviously a way of repeating oneself. Now imagine that you find a bug in the script. How will it be made sure that everyone is informed about the fix? The blog post of Miles McBain (2024) discusses some ideas on how to tackle this.</p> <h2 id="a-holistic-example">A holistic example</h2> <p>Compare the two logically identical implementations of a zero-dimensional energy balance model below. The first one does the job, but it is quite hard to undestand what’s going on, isn’t it?</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
@@ -358,33 +346,37 @@
 26
 27
 28
-</pre></td><td class="code"><pre>  <span class="n">T</span> <span class="o">=</span> <span class="mi">200</span> 
-  <span class="c1"># using heat capacity C [J/m^2/K] for 100m deep water as example 
-</span>  <span class="n">C</span> <span class="o">=</span> <span class="mf">4.0e+08</span>  
-  <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.3</span>  
-  <span class="n">epsilon_earth</span> <span class="o">=</span> <span class="mi">1</span>  
-  <span class="n">epsilon_atm</span> <span class="o">=</span> <span class="mf">0.77</span>  
-  <span class="n">sigma</span> <span class="o">=</span> <span class="mf">5.67E-8</span>  
+29
+30
+</pre></td><td class="code"><pre><span class="n">T</span> <span class="o">=</span> <span class="mi">200</span>
 
-  <span class="n">ghe</span> <span class="o">=</span> <span class="bp">False</span>  
+<span class="c1"># using heat capacity C [J/m^2/K] for 100m deep water as example
+</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mf">4.0e+08</span>  
+ <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.3</span>  
+ <span class="n">epsilon_earth</span> <span class="o">=</span> <span class="mi">1</span>  
+ <span class="n">epsilon_atm</span> <span class="o">=</span> <span class="mf">0.77</span>  
+ <span class="n">sigma</span> <span class="o">=</span> <span class="mf">5.67E-8</span>
 
-  <span class="n">TT</span> <span class="o">=</span> <span class="p">[]</span>  
-  <span class="n">tt</span> <span class="o">=</span> <span class="p">[]</span>  
+<span class="n">ghe</span> <span class="o">=</span> <span class="bp">False</span>
 
-  <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>  
+<span class="n">TT</span> <span class="o">=</span> <span class="p">[]</span>  
+ <span class="n">tt</span> <span class="o">=</span> <span class="p">[]</span>
 
-      <span class="n">T_atm</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>  
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+
+      <span class="n">T_atm</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
       <span class="c1"># compute radiative imbalance by subtracting outgoing
 </span>      <span class="c1"># longwave from incoming shortwave radiation
-</span>      <span class="n">add</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1368</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">epsilon_earth</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="nf">pow</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  
-	
-      <span class="k">if</span> <span class="n">ghe</span><span class="p">:</span> <span class="c1"># if greenhouse effect should be included
-</span>        <span class="n">add</span> <span class="o">+=</span> <span class="n">epsilon_atm</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="nf">pow</span><span class="p">(</span><span class="n">T_atm</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  
-	
-      <span class="n">T</span> <span class="o">+=</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">365</span><span class="o">*</span><span class="n">add</span><span class="o">/</span><span class="n">C</span>  
-      <span class="n">T2</span> <span class="o">=</span> <span class="n">T</span> <span class="o">-</span> <span class="mf">273.15</span>  
+</span>      <span class="n">add</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1368</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">epsilon_earth</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="nf">pow</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
-      <span class="n">tt</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>  
+      <span class="k">if</span> <span class="n">ghe</span><span class="p">:</span> <span class="c1"># if greenhouse effect should be included
+</span>        <span class="n">add</span> <span class="o">+=</span> <span class="n">epsilon_atm</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="nf">pow</span><span class="p">(</span><span class="n">T_atm</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+      <span class="n">T</span> <span class="o">+=</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">365</span><span class="o">*</span><span class="n">add</span><span class="o">/</span><span class="n">C</span>
+      <span class="n">T2</span> <span class="o">=</span> <span class="n">T</span> <span class="o">-</span> <span class="mf">273.15</span>
+
+      <span class="n">tt</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
       <span class="n">TT</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">T2</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> This zero-dimensional energy balance model is hard to understand. Compare this with the same model with extracted functions and proper variable naming in the snippet below. </div> <p>In the second snippet, parts of the code are extracted into well-named functions, magic numbers are stored in constants and variable names are descriptive. Note also the <code class="language-plaintext highlighter-rouge">if</code> statement that previously required an explaining comment which is now replaced by a speaking variable making the explanation unnecessary. Someone reading the code will understand it much faster than the first version. These functions can not only be re-used in other parts of the model, they can also be easily tested. This contributes to better maintainability and error-avoidance.</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -431,49 +423,55 @@
 43
 44
 45
-</pre></td><td class="code"><pre>  <span class="n">SIGMA</span> <span class="o">=</span> <span class="mf">5.67E-8</span> <span class="c1"># Stefan-Boltzmann constant [W/m2]  
-</span>  <span class="n">SOLAR_RADIATION</span> <span class="o">=</span> <span class="mi">1368</span> <span class="c1"># [W/m2]  
-</span>  <span class="n">SECONDS_PER_YEAR</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">365</span> <span class="c1"># [s]  
+46
+47
+48
+</pre></td><td class="code"><pre><span class="n">SIGMA</span> <span class="o">=</span> <span class="mf">5.67E-8</span> <span class="c1"># Stefan-Boltzmann constant [W/m2]  
+</span> <span class="n">SOLAR_RADIATION</span> <span class="o">=</span> <span class="mi">1368</span> <span class="c1"># [W/m2]  
+</span> <span class="n">SECONDS_PER_YEAR</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span>\<span class="o">*</span><span class="mi">365</span> <span class="c1"># [s]
 </span>
-  <span class="n">T_surface_K</span> <span class="o">=</span> <span class="mi">200</span>  
-  <span class="c1"># using heat capacity C [J/m^2/K] for 100m deep water as example 
-</span>  <span class="n">C</span> <span class="o">=</span> <span class="mf">4.0e+08</span> 
-  <span class="n">albedo_earth</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># unitless  
-</span>  <span class="n">epsilon_earth</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># emissivity, unitless  
-</span>  <span class="n">epsilon_atmosphere</span> <span class="o">=</span> <span class="mf">0.77</span> <span class="c1"># emissivity, unitless  
+<span class="n">T_surface_K</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1"># using heat capacity C [J/m^2/K] for 100m deep water as example
 </span>
-  <span class="n">include_greenhouse_effect</span> <span class="o">=</span> <span class="bp">True</span>  
+<span class="n">C</span> <span class="o">=</span> <span class="mf">4.0e+08</span>
+<span class="n">albedo_earth</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># unitless  
+</span> <span class="n">epsilon_earth</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># emissivity, unitless  
+</span> <span class="n">epsilon_atmosphere</span> <span class="o">=</span> <span class="mf">0.77</span> <span class="c1"># emissivity, unitless
+</span>
+<span class="n">include_greenhouse_effect</span> <span class="o">=</span> <span class="bp">True</span>
 
-  <span class="n">surface_temperatures</span> <span class="o">=</span> <span class="p">[]</span>  
-  <span class="n">timesteps_years</span> <span class="o">=</span> <span class="p">[]</span>  
+<span class="n">surface_temperatures</span> <span class="o">=</span> <span class="p">[]</span>  
+ <span class="n">timesteps_years</span> <span class="o">=</span> <span class="p">[]</span>
 
-  <span class="k">def</span> <span class="nf">incoming_shortwave_radiation</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>  
-      <span class="c1"># dividing by 4 to map from circle to sphere  
-</span>      <span class="k">return</span> <span class="n">SOLAR_RADIATION</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>  
+<span class="k">def</span> <span class="nf">incoming_shortwave_radiation</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>  
+ <span class="c1"># dividing by 4 to map from circle to sphere  
+</span> <span class="k">return</span> <span class="n">SOLAR_RADIATION</span>\<span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
 
-  <span class="k">def</span> <span class="nf">outgoing_longwave_radiation</span><span class="p">(</span><span class="n">temperature_K</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>  
-      <span class="c1"># Boltzmann (1884)
-</span>      <span class="k">return</span> <span class="n">epsilon</span> <span class="o">*</span> <span class="n">SIGMA</span> <span class="o">*</span> <span class="nf">pow</span><span class="p">(</span><span class="n">temperature_K</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  
+<span class="k">def</span> <span class="nf">outgoing_longwave_radiation</span><span class="p">(</span><span class="n">temperature_K</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>  
+ <span class="c1"># Boltzmann (1884)
+</span><span class="k">return</span> <span class="n">epsilon</span> <span class="n">_</span> <span class="n">SIGMA</span> <span class="n">_</span> <span class="nf">pow</span><span class="p">(</span><span class="n">temperature_K</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
-  <span class="c1"># See model description paper section 1.2 for details  
-</span>  <span class="k">def</span> <span class="nf">compute_atmospheric_temperature</span><span class="p">(</span><span class="n">surface_temperature</span><span class="p">):</span>  
-      <span class="k">return</span> <span class="n">surface_temperature</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>  
+<span class="c1"># See model description paper section 1.2 for details
+</span>
+<span class="k">def</span> <span class="nf">compute_atmospheric_temperature</span><span class="p">(</span><span class="n">surface_temperature</span><span class="p">):</span>  
+ <span class="k">return</span> <span class="n">surface_temperature</span><span class="o">/</span><span class="mi">2</span>\<span class="o">*</span>\<span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 
-  <span class="k">def</span> <span class="nf">convert_kelvin_to_celsius</span><span class="p">(</span><span class="n">temp_K</span><span class="p">):</span>  
-      <span class="k">return</span> <span class="n">temp_K</span> <span class="o">-</span> <span class="mf">273.15</span>  
+<span class="k">def</span> <span class="nf">convert_kelvin_to_celsius</span><span class="p">(</span><span class="n">temp_K</span><span class="p">):</span>  
+ <span class="k">return</span> <span class="n">temp_K</span> <span class="o">-</span> <span class="mf">273.15</span>
 
-  <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>  
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
 
       <span class="n">radiative_imbalance_surface</span> <span class="o">=</span> <span class="nf">incoming_shortwave_radiation</span><span class="p">(</span><span class="n">albedo_earth</span><span class="p">)</span>
-                              <span class="o">-</span> <span class="nf">outgoing_longwave_radiation</span><span class="p">(</span><span class="n">T_surface_K</span><span class="p">,</span> <span class="n">epsilon_earth</span><span class="p">)</span>  
-	
-      <span class="k">if</span> <span class="n">include_greenhouse_effect</span><span class="p">:</span>  
+                              <span class="o">-</span> <span class="nf">outgoing_longwave_radiation</span><span class="p">(</span><span class="n">T_surface_K</span><span class="p">,</span> <span class="n">epsilon_earth</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="n">include_greenhouse_effect</span><span class="p">:</span>
           <span class="n">reflected_longwave_radiation</span> <span class="o">=</span> <span class="nf">outgoing_longwave_radiation</span><span class="p">(</span>
             <span class="nf">compute_atmospheric_temperature</span><span class="p">(</span><span class="n">T_surface_K</span><span class="p">),</span> <span class="n">epsilon_atmosphere</span><span class="p">)</span>
-          <span class="n">radiative_imbalance_surface</span> <span class="o">+=</span> <span class="n">reflected_longwave_radiation</span>  
-	
-      <span class="n">T_surface_K</span> <span class="o">+=</span> <span class="n">SECONDS_PER_YEAR</span> <span class="o">*</span> <span class="n">radiative_imbalance_surface</span> <span class="o">/</span> <span class="n">C</span>  
-	
-      <span class="n">timesteps_years</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>  
-      <span class="n">surface_temperatures</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">convert_kelvin_to_celsius</span><span class="p">(</span><span class="n">T_surface_K</span><span class="p">))</span>  
+          <span class="n">radiative_imbalance_surface</span> <span class="o">+=</span> <span class="n">reflected_longwave_radiation</span>
+
+      <span class="n">T_surface_K</span> <span class="o">+=</span> <span class="n">SECONDS_PER_YEAR</span> <span class="o">*</span> <span class="n">radiative_imbalance_surface</span> <span class="o">/</span> <span class="n">C</span>
+
+      <span class="n">timesteps_years</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+      <span class="n">surface_temperatures</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">convert_kelvin_to_celsius</span><span class="p">(</span><span class="n">T_surface_K</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure> <div class="caption"> This is the same model as in the code snippet above. However, upon first look it is easily understandable what is happening in the model. Note that I decided to not extract `273.15` into a constant, simply because the function name already makes it clear what it happening. This code example was created building on the work of multiple online resources (Boergel, 2024; Mann &amp; Gaudet, 2024; Rose &amp; Scott-Brown, 2024). </div> <h1 id="conclusion">Conclusion</h1> <p>I hope this post, and especially the final example, could show you that it is quite simple to make code easily understandable. The little effort it takes will definitely be worth it, because it will save a lot of time when you or someone else has to revisit your code.</p> <p>I believe that this still remaind valid in times of chatGPT and other code generation tools. Having the code well-readable and broken down into well-defined functions will help you ensure that the code is actually logically correct, and easily maintainable.</p> <h1 id="references">References</h1> <ul> <li>Boergel, F. (2024). Climate of the ocean. <a href="https://florianboergel.github.io/climateoftheocean">https://florianboergel.github.io/climateoftheocean</a></li> <li>Mann, M., &amp; Gaudet, B. (2024). Meteo 469: From Meteorology to Mitigation: Understanding Global Warming. <a href="https://www.e-education.psu.edu/meteo469/">https://www.e-education.psu.edu/meteo469/</a></li> <li>McBain, M. (2024). Before I Sleep: Patterns and anti-patterns of data analysis reuse. <a href="https://milesmcbain.com/posts/data-analysis-reuse/">https://milesmcbain.com/posts/data-analysis-reuse/</a></li> <li>Rose, B. E. J., &amp; Scott-Brown, J. (2024). The Climate Laboratory. <a href="https://doi.org/10.5281/zenodo.10552644">https://doi.org/10.5281/zenodo.10552644</a></li> </ul>]]></content><author><name></name></author><category term="code"/><category term="code"/><summary type="html"><![CDATA[Some crucial tips on how to create readable and testable code]]></summary></entry><entry><title type="html">9 life hacks for a successful PhD (or other knowledge work)</title><link href="https://k-gregor.github.io/blog/2024/life-hacks-for-a-successful-phd/" rel="alternate" type="text/html" title="9 life hacks for a successful PhD (or other knowledge work)"/><published>2024-08-08T15:09:00+00:00</published><updated>2024-08-08T15:09:00+00:00</updated><id>https://k-gregor.github.io/blog/2024/life-hacks-for-a-successful-phd</id><content type="html" xml:base="https://k-gregor.github.io/blog/2024/life-hacks-for-a-successful-phd/"><![CDATA[<p>Doing a PhD is not easy and there will be many times where you just want to quit. We’ve all been there. This makes it extremely important to make the process as easy and straightforward for yourself as possible. Here, I collected 9 hacks (I think they are more than just tips) that really helped me succeed at my PhD and that you might not have thought about. These will also be helpful for any other type of “brain work” like doing a Postdoc or working in the software industry. Let’s dive right in!</p> <h1 id="hack-1---get-some-really-large-hard-drives">Hack 1 - Get some really large hard drives</h1> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blogpostimgs/harddrive-480.webp 480w,/assets/img/blogpostimgs/harddrive-800.webp 800w,/assets/img/blogpostimgs/harddrive-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/blogpostimgs/harddrive.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="400" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <div class="caption"> SSD hard drives are tiny, cheap, and can store huge amounts of data. Image by Thiago Japyassu from pexels.com </div> <p>During your PhD, you will need to store loads of data and you can absolutely not risk loosing any data. Data loss often occurs when you quickly need to free up space in order to store a new dataset. Do yourself a favor and free yourself from this risk (and the time it needs to figure out what data you can remove to make space) by getting a large hard drive for your laptop. Large and fast SSDs are absolutely affordable now (potentially your employer will also pay for this!), so go ahead and get one, like this <a href="https://amzn.to/3WUWcUx">4TB internal SSD</a>. Note: this is an affiliate link, by buying it through that link, you help me maintain this blog =)</p> <p>In addition, get yourself a large external hard drive where you do regular backups. Apart from an online backup tool like OneDrive or pcloud, I’d recommend to to regular “hard copy” backups. The external hard drive should have the same size as your internal one. I am using <a href="https://amzn.to/3YCP8xc">this one</a>.</p> <h1 id="hack-2---use-the-pomodoro-technique">Hack 2 - Use the Pomodoro technique</h1> <p>During a PhD you’ll likely have to work on many different highly complex projects. The Pomodoro technique will help you to improve focus and memory. It’s very simple - you divide your work day into 30 min work periods followed by a 5 min break and doing that over and over again. Naturally, you can adapt these times as you desire. In the 30 minutes, you focus on ONE thing only. The benefits are that you force yourself to focus on that one thing and not switch around (multi-tasking is bad!) and you also force yourself to take regular breaks, which you should use to move around, drink water, and rest your eyes and brain.</p> <p>There is an additional perk: We tend to memorize things better at the “edges” of a work unit, i.e., right what we do at the beginning at right at the end, because the brain can anchor these things better. Forcing yourself to take breaks creates more of these “edges”.</p> <p>There are numerous free tools to time your “pomodoros”. I am using <a href="https://splode.github.io/pomotroid/">Pomotroid</a> as I am writing this post, having another 17 minutes before I will take my next break. Of course, if you’re really in the flow, you can always skip a break and keep going.</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blogpostimgs/pomotroid-480.webp 480w,/assets/img/blogpostimgs/pomotroid-800.webp 800w,/assets/img/blogpostimgs/pomotroid-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/blogpostimgs/pomotroid.png" class="img-fluid rounded z-depth-1 mx-auto d-block" width="400" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <div class="caption"> Pomotroid helps you focus and take regular breaks </div> <h1 id="hack-3---take-a-speed-reading-class">Hack 3 - Take a speed reading class</h1> <p>Reading papers is absolutely crucial in any PhD or scientific position. In my library are over 1500 papers and 100 books. I used to be slow reader and found myself having to read passages over and over again because I was paying attention. An absolutely crazy thing that I learned is this one: the best way to avoid drifting off when reading is… reading faster! This was so counter-intuitive to me, but it actually works! Your brain is absolutely focused on the text at hand and will not drift off as easily.</p> <p>There are courses that help you read faster and memorize more at the same time. If you allocate a day per week on reading, and increase your reading speed by 20%, you will save 2 months of time in a 4-year PhD program (neglecting the other positive effects like avoiding drifting off and memorizing better).</p> <p>I took a class with <a href="https://irisreading.com/">Iris Reading</a> (not affiliated) but there are probably many other courses out there. I found this to be well worth the money.</p> <h1 id="hack-4---boost-your-note-taking">Hack 4 - Boost your note taking</h1> <p>Writing proper notes is critical to store, find, and recall all the information that we learn during our PhD, and here you can really supercharge your note taking by spending some time developing a system that works for you. Number one is the tool. I use <a href="https://obsidian.md">Obsidian</a> and I am very happy, but other tools like OneNote also work well and you will have to try out which one you like best.</p> <p>What’s more important in my experience is <em>how</em> you take notes… In the beginning, I simply summarized every paper I read. But this did not really make sense. Our brain needs connections, so a better approach is to collect information on a given topic and link multiple papers together. Furthermore, you can link related notes. See my example below. This also helps in your writing process because you have all related information connected.</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blogpostimgs/obsidian-480.webp 480w,/assets/img/blogpostimgs/obsidian-800.webp 800w,/assets/img/blogpostimgs/obsidian-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/blogpostimgs/obsidian.png" class="img-fluid rounded z-depth-1 mx-auto d-block" width="400" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <div class="caption"> Example of one of my notes, collecting information on one topic and linking various papers (marked with @) and other notes together. </div> <p>An additional tip: Take notes in every meeting. Then you can always look back, e.g., at what your advisor told you or what was decided on in a group. This will also help you pay attention during a meeting and not doze off.</p> <h1 id="hack-5---use-anki-to-remember-everything">Hack 5 - Use Anki to remember everything</h1> <p>Yeah, nowadays we can look everything up very quickly. But it does take time and in discussions you want to immediately know the facts by heart. Furthermore, you want to be able to immediately validate or challenge others’ claims. For instance, if you read a paper stating how much carbon is stored in the world’s forests, you want to immediately be able to validate that (it’s 860 GtC by the way, I know that because I am using Anki).</p> <p><a href="https://apps.ankiweb.net/">Anki</a> is a free flashcard system that works on your phone or computer. The flash cards you give it to it will be shown to you in a spaced repetition fashion – stuff that you easily know will only be asked in the far future. Things that you struggle memorizing will re-appear very soon. This is based on science, showing that the best time to look at a note again is right at the point where you’re about to forget it. This is what Anki does.</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blogpostimgs/anki-480.webp 480w,/assets/img/blogpostimgs/anki-800.webp 800w,/assets/img/blogpostimgs/anki-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/blogpostimgs/anki.png" class="img-fluid rounded z-depth-1 mx-auto d-block" width="400" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <div class="caption"> An example of the Anki app on my computer. </div> <p>The best part is, you can include it in your note taking tools, for instance Obsidian, see the example below. I only need to write <code class="language-plaintext highlighter-rouge">#flashcard</code> to let the Obsidian plugin know that the lines before and after should be exported into a new flashcard with Anki. Creating the flashcards also is a first very helpful task in making the information more memorable. Apart from important numbers you can also add the citation to most important things. Then you will easily remember in which paper something was mentioned (for the forest carbon, its Pan et al. (2011), by the way =D).</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blogpostimgs/obsidian_anki-480.webp 480w,/assets/img/blogpostimgs/obsidian_anki-800.webp 800w,/assets/img/blogpostimgs/obsidian_anki-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/blogpostimgs/obsidian_anki.png" class="img-fluid rounded z-depth-1 mx-auto d-block" width="400" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <div class="caption"> An example of my note taking app that is connected to Anki. Any mention of `#flashcard` will create an Anki card from the note. </div> <p>On a side note, Anki also offers pre-made flashcards like “Spanish 5000” which can help you learn pretty much anything, hablar español por ejemplo!</p> <h1 id="hack-6---learn-to-say-no">Hack 6 - Learn to say “no”</h1> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blogpostimgs/no-480.webp 480w,/assets/img/blogpostimgs/no-800.webp 800w,/assets/img/blogpostimgs/no-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/blogpostimgs/no.png" class="img-fluid rounded z-depth-1 mx-auto d-block" width="200" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <div class="caption"> You gotta say "no" sometimes. </div> <p>This is a complicated one. But I think it’s important. Every “no” you say to something means you can focus on more important things and avoid getting off track. So, even though it might be hard, you sometimes have to say no…</p> <ul> <li>to your supervisor <ul> <li>she/he will not like that, but maybe you need to focus on something</li> <li>perhaps you can formulate it like “well, I can do task X by next week, but this means that I will not be able to finish Y by next week.”</li> </ul> </li> <li>to your co-authors <ul> <li>remember, it is extremely easy as a co-author to suggest things you could do, papers you should read, and so on</li> <li>but you don’t have to do <em>all</em> these things <ul> <li>you can always say: “this is a great comment, I will keep this in mind for a follow-up study”</li> </ul> </li> </ul> </li> <li>to side-projects <ul> <li>there is always too much interesting stuff to do</li> </ul> </li> <li>to yourself <ul> <li>it might be heart-breaking, but it will often happen that stuff you worked on for a long time will go into the trash bin.</li> <li>you can not cling to everything you did, sometimes you have to face it and say “no, I simply cannot use this for the paper, it has to go”</li> </ul> </li> </ul> <h1 id="hack-7---take-a-writing-class">Hack 7 - Take a writing class</h1> <p>Even with ground-breaking results you probably need to properly write them down to have the journal accept it for publication. And let’s face it, our results are often rather incremental, especially during the beginning of a PhD… So, you want to make sure that the quality of your writing is good!</p> <p>When I review a paper for a journal, and I see bad grammar, poor formatting, and ugly figures, I can’t help but think that this work is probably not gonna be great (to be honest, this often turns out to be true). You should avoid this at any cost! The writing and presentation of your results should be impeccable!</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blogpostimgs/writing-480.webp 480w,/assets/img/blogpostimgs/writing-800.webp 800w,/assets/img/blogpostimgs/writing-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/blogpostimgs/writing.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="400" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <div class="caption"> Invest some time to improve your writing. Picture from pexels.com - RF._.studio. </div> <p>Writing is hard, so invest some time to get better at it. There are many books out there to help, I have come to like these two:</p> <ul> <li><a href="https://amzn.to/4dkxJ0M">Cargill and O’Connor - Writing Scientific Research Articles</a></li> <li><a href="https://amzn.to/46Fpj1t">Joshua Schimel: Writing Science: How to Write Papers That Get Cited and Proposals That Get Funded</a></li> </ul> <p>You could propose in your group to make a reading group for the books! There are also classes offered online, for instance by <a href="https://masterclasses.nature.com/online-course-in-scientific-writing-and-publishing/16507840">Nature Masterclasses</a> (not affiliated).</p> <p>Your first paper is gonna take forever to write anyway. Taking time to improve your writing will be well-invested time.</p> <h1 id="hack-8---use-ai-tools">Hack 8 - Use AI tools</h1> <p>AI is out there and if you’re not using it you are giving yourself a competitive disadvantage. One could write a whole book on AI tools and how to use them for science, so I will not go into detail here. quillbot is a helpful tool to paraphrase text, as is ChatGPT. I have found jenny.ai to be a good tool to write introductory text, providing you also some suggestions for papers to cite. What is extremely important here is that, for instance with ChatGPT, you cannot trust it in scientific questions. It will literally make up papers that do not exist and happily provide you with information from these papers and even a made-up DOI. So be careful!</p> <p>One tool that I have only recently started to use but already found incredibly useful is <a href="https://www.scite.ai">scite</a>. Since I do not have enough knowledge yet, I would like to refer to this <a href="https://www.youtube.com/watch?v=4tjfIJg40MY">YouTube</a> video that explains nicely how this tool can boost your research, for instance by finding sources for a claim, or by showing that there are papers contradicting a given one. This can be incredibly helpful.</p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blogpostimgs/sciteai-480.webp 480w,/assets/img/blogpostimgs/sciteai-800.webp 800w,/assets/img/blogpostimgs/sciteai-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/blogpostimgs/sciteai.png" class="img-fluid rounded z-depth-1 mx-auto d-block" width="400" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <div class="caption"> Scite tells us that there are a 4 papers that contradict this one and 11 editorial notices. </div> <p>Again, with all AI tools: make sure you doublecheck the information these tools provide to you!</p> <h1 id="hack-9---invite-yourself-to-other-groups">Hack 9 - Invite yourself to other groups</h1> <p>Science builds on collaboration and papers nowadays often have dozens of co-authors. So, to get more input, and also to develop a standing in the science community, you want people out there to know you. This is also important to score a job after your PhD! Consequently, you need to network. And you supervisor probably does not have money to send you to every conference there is.</p> <p>But in times of online or hybrid meetings, you can easily score a little presentation at another group! If you have something interesting to say this is a win-win situation! You can just write someone from your group saying “hey I see you are doing something similar, perhaps we can profit from each other’s work. I’d he happy to give a presentation on my latest results in your group meeting”. I have found that this usually works. Especially if you have published something that you can refer to. Research groups are always happy to get new inputs and make collaborations, so you can profit from this as well =)</p> <p>BTW, this also holds for exchange visits at other groups. Inform yourself of possible funding from your home institution.</p> <h1 id="conclusion">Conclusion</h1> <p>I have shown you 9 hacks that helped me during the years of my PhD (and after). They cover aspects of data handling, reading, note-taking, writing, and networking. Hopefully, some of these hacks are also useful to you and I sure hope there were some that you wouldn’t have thought about. Of course, everyone is different, but I think the points raised here are pretty important for anyone working in science.</p> <p>Wishing you good luck on your PhD!</p>]]></content><author><name></name></author><category term="phd"/><category term="phd"/><summary type="html"><![CDATA[With these tips you can supercharge your PhD or working experience]]></summary></entry></feed>
