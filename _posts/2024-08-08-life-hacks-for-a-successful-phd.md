@@ -17,6 +17,7 @@ Let's dive right in!
 # Hack 1 - Get some really large hard drives
 
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/harddrive.jpg" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+
 <div class="caption">
     SSD hard drives are tiny, cheap, and can store huge amounts of data. Image by Thiago Japyassu from pexels.com
 </div>
@@ -28,9 +29,8 @@ by getting a large hard drive for your laptop. Large and fast SSDs are absolutel
 also pay for this!), so go ahead and get one, like this [4TB internal SSD](https://amzn.to/3WUWcUx). Note: this is an affiliate link,
 by buying it through that link, you help me maintain this blog =)
 
-In addition, get yourself a large external hard drive where you do regular backups. Apart from an online backup tool like OneDrive or pcloud, 
+In addition, get yourself a large external hard drive where you do regular backups. Apart from an online backup tool like OneDrive or pcloud,
 I'd recommend to to regular "hard copy" backups. The external hard drive should have the same size as your internal one. I am using [this one](https://amzn.to/3YCP8xc).
-
 
 # Hack 2 - Use the Pomodoro technique
 
@@ -40,13 +40,14 @@ Naturally, you can adapt these times as you desire. In the 30 minutes, you focus
 The benefits are that you force yourself to focus on that one thing and not switch around (multi-tasking is bad!) and you also force yourself
 to take regular breaks, which you should use to move around, drink water, and rest your eyes and brain.
 
-There is an additional perk: We tend to memorize things better at the "edges" of a work unit, i.e., right what we do at the beginning at right at the end, 
+There is an additional perk: We tend to memorize things better at the "edges" of a work unit, i.e., right what we do at the beginning at right at the end,
 because the brain can anchor these things better. Forcing yourself to take breaks creates more of these "edges".
 
 There are numerous free tools to time your "pomodoros". I am using [Pomotroid](https://splode.github.io/pomotroid/) as I am writing this post, having another 17 minutes before I will take my next break.
 Of course, if you're really in the flow, you can always skip a break and keep going.
 
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/pomotroid.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+
 <div class="caption">
     Pomotroid helps you focus and take regular breaks
 </div>
@@ -69,12 +70,12 @@ Writing proper notes is critical to store, find, and recall all the information 
 spending some time developing a system that works for you.
 Number one is the tool. I use [Obsidian](https://obsidian.md) and I am very happy, but other tools like OneNote also work well and you will have to try out which one you like best.
 
-What's more important in my experience is *how* you take notes... In the beginning, I simply summarized every paper I read. But this did not really make sense. Our brain needs connections, so a better approach
+What's more important in my experience is _how_ you take notes... In the beginning, I simply summarized every paper I read. But this did not really make sense. Our brain needs connections, so a better approach
 is to collect information on a given topic and link multiple papers together. Furthermore, you can link related notes. See my example below.
 This also helps in your writing process because you have all related information connected.
 
-
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/obsidian.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+
 <div class="caption">
     Example of one of my notes, collecting information on one topic and linking various papers (marked with @) and other notes together.
 </div>
@@ -91,8 +92,8 @@ stored in the world's forests, you want to immediately be able to validate that 
 [Anki](https://apps.ankiweb.net/) is a free flashcard system that works on your phone or computer. The flash cards you give it to it will be shown to you in a spaced repetition fashion -- stuff that you easily know will only be asked in the far future.
 Things that you struggle memorizing will re-appear very soon. This is based on science, showing that the best time to look at a note again is right at the point where you're about to forget it. This is what Anki does.
 
-
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/anki.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+
 <div class="caption">
     An example of the Anki app on my computer.
 </div>
@@ -103,6 +104,7 @@ Creating the flashcards also is a first very helpful task in making the informat
 Apart from important numbers you can also add the citation to most important things. Then you will easily remember in which paper something was mentioned (for the forest carbon, its Pan et al. (2011), by the way =D).
 
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/obsidian_anki.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+
 <div class="caption">
     An example of my note taking app that is connected to Anki. Any mention of `#flashcard` will create an Anki card from the note.
 </div>
@@ -111,20 +113,21 @@ On a side note, Anki also offers pre-made flashcards like "Spanish 5000" which c
 
 # Hack 6 - Learn to say "no"
 
-
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/no.png" width=200 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+
 <div class="caption">
     You gotta say "no" sometimes.
 </div>
 
 This is a complicated one. But I think it's important. Every "no" you say to something means you can focus on more important things and avoid getting off track.
 So, even though it might be hard, you sometimes have to say no...
+
 - to your supervisor
   - she/he will not like that, but maybe you need to focus on something
   - perhaps you can formulate it like "well, I can do task X by next week, but this means that I will not be able to finish Y by next week."
 - to your co-authors
   - remember, it is extremely easy as a co-author to suggest things you could do, papers you should read, and so on
-  - but you don't have to do *all* these things
+  - but you don't have to do _all_ these things
     - you can always say: "this is a great comment, I will keep this in mind for a follow-up study"
 - to side-projects
   - there is always too much interesting stuff to do
@@ -142,8 +145,8 @@ When I review a paper for a journal, and I see bad grammar, poor formatting, and
 is probably not gonna be great (to be honest, this often turns out to be true). You should avoid this at any cost!
 The writing and presentation of your results should be impeccable!
 
-
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/writing.jpg" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+
 <div class="caption">
     Invest some time to improve your writing. Picture from pexels.com - RF._.studio.
 </div>
@@ -167,6 +170,7 @@ One tool that I have only recently started to use but already found incredibly u
 explains nicely how this tool can boost your research, for instance by finding sources for a claim, or by showing that there are papers contradicting a given one. This can be incredibly helpful.
 
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/sciteai.png " width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+
 <div class="caption">
     Scite tells us that there are a 4 papers that contradict this one and 11 editorial notices.
 </div>
@@ -185,8 +189,6 @@ I have found that this usually works. Especially if you have published something
 Research groups are always happy to get new inputs and make collaborations, so you can profit from this as well =)
 
 BTW, this also holds for exchange visits at other groups. Inform yourself of possible funding from your home institution.
-
-
 
 # Conclusion
 
