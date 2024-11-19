@@ -22,6 +22,8 @@ The other courses contain both presentation and hands-on workshop parts.
 
 But generally, we can adapt the courses as you need, as potentially not all aspects will be relevant for your group. Here are some general courses that I have taught:
 
+<br/>
+
 ### Best practices for programming for scientists (2 x 2h presentation)
 
 {% include figure.liquid loading="eager" path="assets/img/ide.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
@@ -38,6 +40,8 @@ But generally, we can adapt the courses as you need, as potentially not all aspe
 - Leveraging AI tools
 
 See also my blog posts on [writing proper code]({% post_url 2024-07-20-good-code-1-proper-naming-in-scientific-code %}) and [programming paradigms]({% post_url 2024-10-27-good-code-2-solid-principles %}).
+
+<br/>
 
 ### Version control with `git` for scientists (integrated presentation and workshop, 4h total)
 
@@ -57,6 +61,7 @@ See also my blog posts on [writing proper code]({% post_url 2024-07-20-good-code
   - checking what has changed
   
   
+<br/>
 
 ### Monitoring and optimizing resource usage of scientific code (~3h presentation, potentially with workshop)
 
@@ -77,6 +82,7 @@ See also my blog posts on [writing proper code]({% post_url 2024-07-20-good-code
 
 See also my blog post on this topic: [memory aspects in scientific code]({% post_url 2024-11-17-memory-aspects-in-scientific-coding %})
 
+<br/>
 
 ### Using the command line and bash scripting to speed up scientific workflows (integrated presentation and workshop, 4h total)
 
@@ -93,6 +99,8 @@ This covers topics that are helpful both when working locally or on a supercompu
 - Writing scripts to automate workflows
 - Monitoring resource usage of data analyses
 
+<br/>
+
 ### Introduction to Continuous Integration and Continuous Deployment (~1h presentation)
 
 {% include figure.liquid loading="eager" path="assets/img/lpjci.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
@@ -106,6 +114,8 @@ This covers topics that are helpful both when working locally or on a supercompu
 - Automated testing
 - Issue tracking
 - Versioning
+
+<br/>
 
 ### Using Docker, snakemake, and other tools to make research reproducible (Presentation 2h, potentially with workshop)
 
