@@ -5,7 +5,7 @@ date: 2024-10-27 15:09:00
 description: A discussion of the most important paradigms of professional software development and how they can help us write good code in science.
 tags: code
 categories: code
-featured: true
+featured: false
 ---
 
 In my post about [variable naming and function extraction]({% post_url 2024-07-20-good-code-1-proper-naming-in-scientific-code %}) I tried to convey how simple it is to make code readable and understandable.

@@ -5,7 +5,7 @@ date: 2024-10-05 15:09:00
 description: Some crucial tips on how to create readable and testable code
 tags: code
 categories: code
-featured: true
+featured: false
 ---
 
 Scientists are not software developers, yet we often do write software. This could include simple data pre-processing scripts, complex data analyses, or full scientific models.

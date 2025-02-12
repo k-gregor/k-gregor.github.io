@@ -5,7 +5,7 @@ date: 2024-08-08 15:09:00
 description: With these tips you can supercharge your PhD or working experience
 tags: phd
 categories: phd
-featured: true
+featured: false
 ---
 
 Doing a PhD is not easy and there will be many times where you just want to quit. We've all been there. This makes it extremely
