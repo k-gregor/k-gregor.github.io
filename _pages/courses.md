@@ -60,6 +60,7 @@ See also my blog posts on [writing proper code]({% post_url 2024-07-20-good-code
   - merging
   - checking what has changed
   
+You can find the content of the workshop here: <a href="https://github.com/k-gregor/git-workshop">https://github.com/k-gregor/git-workshop</a>
   
 <br/>
 
