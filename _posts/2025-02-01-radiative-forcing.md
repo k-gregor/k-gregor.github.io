@@ -8,8 +8,8 @@ categories: science
 featured: false
 ---
 
-Radiative forcing is a key concept in the science of climate change. However, it is a complex topic and sometimes details are omitted or terms used interchangeably. This makes it hard to grasp.
-Therefore, I here try to summarize and combine the most important definitions, concepts, and their relations.
+Radiative forcing is a key concept in climate science. However, it is a complex topic and sometimes details are omitted or terms used interchangeably, which makes it hard to grasp.
+Therefore, I here try to summarize and synthesize the most important definitions, concepts, and their relations.
 
 
 Let's start with two keywords:
@@ -26,18 +26,17 @@ Why the hell is there an image of a desk lamp? Well, you'll find out when you re
 
 ### Definition of radiative forcing
 
-Radiative forcing refers to the immediate change in the top-of-atmosphere (TOA) energy balance (incoming vs outgoing energy) when a forcing from an external driver is applied to the system, before the surface can adapt.
-
-The IPCC defines it as "the change in the net, downward minus upward, radiative flux (expressed in W/m$$^2$$) due to a change in an external driver of climate change." Those external drivers could be changes in solar radiation, volcanic activity, emissions of greenhouse gases, or land cover change.
+Radiative forcing refers to the immediate change in the top-of-atmosphere (TOA) energy balance (incoming vs outgoing energy) due to an external driver, before the surface can adapt.
 
 Zero radiative forcing than means that the Earth is in energy equilibrium with the Sun. The amount of energy coming in from the sun is the same as goes out from longwave radiation and Earth has an equilibrium average temperature. This was roughly the case before the industrial revolution. Of course, solar energy input varies over the course of a year due to the way Earth and Sun are standing relative to one another, but on average, the energy budget remains the same.
 
-The IPCC thus marks the year 1750 as the baseline, assuming for this time a planet roughly in balance, and around zero radiative forcing.
+Formally, the IPCC defines radiative forcing as "the change in the net, downward minus upward, radiative flux (expressed in W/m$$^2$$) due to a change in an external driver of climate change." Those external drivers could be changes in solar radiation, volcanic activity, emissions of greenhouse gases, or land cover change.
+The IPCC marks the year 1750 as the baseline, assuming for this time a planet roughly in balance, and around zero radiative forcing.
 
 ### Types of radiative forcing
 
 Generally, scientists and the IPCC use the single term *radiative forcing*. But there are actually three types of it.
-Here are some details on the different types, but you can skip this information on first read.
+Here are some details on the different types, but you can skip this information on first read. You can continue at "How is radiative forcing related to the energy balance of the Earth?".
 
 ##### Instantaneous radiative forcing (IRF)
 IRF is defined as the change in the net TOA radiative flux following a perturbation, excluding any adjustments (IPCC-AR6-WGI, p. 941). So, for instance, blowing greenhouse gases into the atmosphere will change how much radiation leaves the planet, and thereby creates an IRF.
@@ -45,13 +44,13 @@ But the system does not stay that way! This immediate change in energy balance (
 IRF is not really used by the IPCC except for some particular ones related to aerosols.
 ##### Stratospherically adjusted radiative forcing (SARF)
 SARF is defined as IRF plus the response to stratospheric temperature adjustments (IPCC-AR6-WGI, p. 941).
-What this means is, blowing carbon dioxide into the air will actually lead to a cooling in the stratosphere (which starts between 8 and 18km above ground, [Goessling and Bathiany, 2016](https://esd.copernicus.org/preprints/esd-2016-8/esd-2016-8.pdf))! This stratospheric cooling, by the way, is a key aspect by how the human impact of climate change is attributed, just saying (see [this video](https://www.youtube.com/watch?v=J1KGnCj_cfM)).
+What this means is, blowing carbon dioxide into the air will actually lead to a cooling in the stratosphere (which starts between 8 and 18km above ground, [Goessling and Bathiany, 2016](https://esd.copernicus.org/preprints/esd-2016-8/esd-2016-8.pdf))! This stratospheric cooling, by the way, is a key aspect of how the human impact of climate change is attributed, just saying (see [this video](https://www.youtube.com/watch?v=J1KGnCj_cfM)).
 
 SARF is computed with models, by fixing tropospheric properties, but allowing for stratospheric temperatures to readjust after a forcing (IPCC-AR6-WGI-Annex-VII).
 
 ##### Effective radiative forcing (ERF)
 ERF is the most important radiative forcing. It quantifies the change in the net TOA energy flux of the Earth system due to a forcing, after accounting for adjustments in both tropospheric and stratospheric temperatures, water vapour, clouds, and some surface properties, such as surface albedo from vegetation changes, that are unrelated to surface temperatures (IPCC-AR6-WGI, Box 7.1).
-These adjustments used to be called "rapid adjustments" but that's not anymore the case, because it's rather "the independence from surface temperature rather than the rapidity" that matters (IPCC-AR6-WGI 7.3). But the processes that are contained are usually fast processes that occur within hours to months, unlike the processes driven by the changing surface temperature which take much longer (IPCC-AR6-WGI Box 7.1).
+These adjustments used to be called "rapid adjustments" but that's not the case anymore, it's "the independence from surface temperature rather than the rapidity" that matters (IPCC-AR6-WGI 7.3). But the processes that are contained are usually fast processes that occur within hours to months, unlike the processes driven by the changing surface temperature which take much longer (IPCC-AR6-WGI Box 7.1).
 Namely, the processes are:
 
 - *tropospheric temperature*: similarly to the stratosphere, there are also rapid changes in temperature in the troposphere, before the Earth's surface temperature will change at all
@@ -80,7 +79,7 @@ $$
 \end{align}
 $$
 
-Interesting how there is also a small land cover / albedo adjustment, right? This could stem from the fact that increases in CO$$_2$$ have quite quick responses in vegetation, for instance that there is less evaporation since plants have more CO$$_2$$ available and then need to open their stomata less to get the CO$$_2$$ they need. This leads to changes in soil moisture and albedo. Plants also potentially grow better under higher CO$$_2$$ (all other factors being equal), so another effect could be more greening, which also affects albedo.
+The small land cover / albedo adjustment could stem from the fact that increases in CO$$_2$$ have quite quick responses in vegetation, for instance that there is less evaporation since plants have more CO$$_2$$ available and then need to open their stomata less to get the CO$$_2$$ they need. This leads to changes in soil moisture and albedo. Plants also potentially grow better under higher CO$$_2$$ (all other factors being equal), so another effect could be more greening, which also affects albedo.
 
 And why is the troposphere temperature adjustment negative? Well, unlike the stratosphere, which cools with increasing levels of CO$$_2$$, the troposphere warms. So then, there will be increased emissions of longwave radiation, thereby increasing longwave radiation going out to space, thus decreasing the energy imbalance. Note that this is an extreme simplification of things :).
 
@@ -118,8 +117,8 @@ I don't want to go into more detail here, but I found it important to mention th
 
 The total anthropogenic ERF in 2019, relative to 1750, was estimated at 2.72 [1.96 to 3.48] W/m$$^2$$ compared to 2019 according to the IPCC, with increasing growing rates (IPCC-AR6-WGI-TS, p 67).
 
-This figure shows the estimated radiative forcing over time. In 1750, is was close to zero. Then we started blowing greenhouse gases into the air. Not much changed for a while, probably because land and ocean took up most of this excess CO$$_2$$, so no big deal. But with time, the emissions became larger and larger, and the radiative forcing went up. Note also the negative radiative forcing from tropospheric aerosols! This is basically pollution, which blocks sunlight and thereby decreases the total radiative forcing. You can also see that the pollution is going down since around 2000 (its RF is going up). This is good for human and animal health, but actually will increase global warming. Quite the conundrum.
-Note also the huge spikes from volcanos but also how short they last. Solar influence is barely visible in the graph. It has a tiny impact.
+This figure shows the estimated radiative forcing over time. In 1750, it was close to zero. Then we started blowing greenhouse gases into the air. Not much changed for a while, probably because land and ocean took up most of this excess CO$$_2$$, so no big deal. But with time, the emissions became larger and larger, and the radiative forcing went up. Note also the negative radiative forcing from tropospheric aerosols! This is basically pollution, which blocks sunlight and thereby decreases the total radiative forcing. You can also see that the pollution is going down since around 2000 (its RF is going up). This is good for human and animal health, but actually will increase global warming. Quite the conundrum.
+Note also the huge spikes from volcanoes but also how short they last. Solar influence is barely visible in the graph. It has a tiny impact.
 
 {% include figure.liquid loading="eager" path="assets/img/blogpostimgs/erf_past.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
 
