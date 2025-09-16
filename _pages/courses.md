@@ -5,7 +5,7 @@ nav: true
 permalink: /courses/
 ---
 
-I offer various courses destilling the most important aspects of software engineering for scientific groups.
+I offer various courses distilling the most important aspects of software engineering for scientific groups.
 Courses can be in-person or online, and they usually consist of a presentation part and a workshop part, but can be fully customized to your needs.
 I have so far given courses at:
 
@@ -17,12 +17,23 @@ Do not hesitate to reach out and we can discuss potential courses for your group
 # Topics
 
 The topics of the courses can be adjusted to your particular needs. 
-From my experience, the `Best practices for coding in science` course is highly useful for most research groups. Even though it is mostly a presentation, is it still interactive, with quizzes and small tasks.
+From my experience, the `Best practices for coding in science` and `Fundamentals of data science` courses are highly useful for most research groups. Even though it is mostly a presentation, is it still interactive, with quizzes and small tasks.
 The other courses contain both presentation and hands-on workshop parts.
 
 But generally, we can adapt the courses as you need, as potentially not all aspects will be relevant for your group. Here are some general courses that I have taught:
 
 <br/>
+
+# Courses
+
+- Fundamentals of data science
+- Fundamentals of programming in Python
+- Best practices for programming for scientists
+- Version control with `git` for scientists
+- Monitoring and optimizing resource usage of scientific code
+- Making quantitative research reproducible
+
+# More details on the courses
 
 ### Best practices for programming for scientists (2 x 2h presentation)
 
@@ -118,7 +129,7 @@ This covers topics that are helpful both when working locally or on a supercompu
 
 <br/>
 
-### Using Docker, snakemake, and other tools to make research reproducible (Presentation 2h, potentially with workshop)
+### Making quantitative research reproducible (Presentation 2h, potentially with workshop)
 
 
 {% include figure.liquid loading="eager" path="assets/img/snakemake_dag.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
