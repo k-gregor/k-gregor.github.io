@@ -18,6 +18,8 @@ Do not hesitate to reach out and we can discuss potential courses for your group
 
 The topics of the courses can be adjusted to your particular needs. 
 From my experience, the `Best practices for coding in science` and `Fundamentals of data science` courses are highly useful for most research groups. Even though it is mostly a presentation, is it still interactive, with quizzes and small tasks.
+Notably, I have recently also started showing how to use AI tools effectively in technical tasks. In my opinion, universities are far behind what could be done here.
+
 The other courses contain both presentation and hands-on workshop parts.
 
 But generally, we can adapt the courses as you need, as potentially not all aspects will be relevant for your group. Here are some general courses that I have taught:
@@ -26,12 +28,16 @@ But generally, we can adapt the courses as you need, as potentially not all aspe
 
 # Courses
 
-- Fundamentals of data science
-- Fundamentals of programming in Python
 - Best practices for programming for scientists
+- <b>Beyond vibe-coding: programming successfully with AI</b>
 - Version control with `git` for scientists
 - Monitoring and optimizing resource usage of scientific code
 - Making quantitative research reproducible
+- Fundamentals of data science
+- Fundamentals of programming in Python
+
+
+<hr/>
 
 # More details on the courses
 
@@ -54,6 +60,25 @@ See also my blog posts on [writing proper code]({% post_url 2024-07-20-good-code
 
 <br/>
 
+<hr/>
+
+### Beyond "vibe-coding": programming successfully with AI (~3h presentation, potentially with workshop)
+
+{% include figure.liquid loading="eager" path="assets/img/chatgpt.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+<div class="caption">
+    New AI tools are here to help with coding. But they should be used wisely!
+</div>
+
+
+AI is here to stay and you'd have a competitive disadvantage if you didn't use it. But anyone can ask ChatGPT to write them some code. But do you just "vibe-code" or use the tools at hand efficiently? In this workshop, we will look into:
+
+- How to efficiently program with AI tools
+- How to make sure AI-generated or AI-influenced code is correct?
+- How can teachers detect AI-generated code?
+
+
+<hr/>
+
 ### Version control with `git` for scientists (integrated presentation and workshop, 4h total)
 
 {% include figure.liquid loading="eager" path="assets/img/git_training.jpg" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
@@ -74,6 +99,9 @@ See also my blog posts on [writing proper code]({% post_url 2024-07-20-good-code
 You can find the content of the workshop here: <a href="https://github.com/k-gregor/git-workshop">https://github.com/k-gregor/git-workshop</a>
   
 <br/>
+
+
+<hr/>
 
 ### Monitoring and optimizing resource usage of scientific code (~3h presentation, potentially with workshop)
 
@@ -96,6 +124,9 @@ See also my blog post on this topic: [memory aspects in scientific code]({% post
 
 <br/>
 
+
+<hr/>
+
 ### Using the command line and bash scripting to speed up scientific workflows (integrated presentation and workshop, 4h total)
 
 {% include figure.liquid loading="eager" path="assets/img/terminal.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
@@ -113,6 +144,9 @@ This covers topics that are helpful both when working locally or on a supercompu
 
 <br/>
 
+
+<hr/>
+
 ### Introduction to Continuous Integration and Continuous Deployment (~1h presentation)
 
 {% include figure.liquid loading="eager" path="assets/img/lpjci.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
@@ -128,6 +162,9 @@ This covers topics that are helpful both when working locally or on a supercompu
 - Versioning
 
 <br/>
+
+
+<hr/>
 
 ### Making quantitative research reproducible (Presentation 2h, potentially with workshop)
 
