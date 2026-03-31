@@ -5,7 +5,12 @@ nav: true
 permalink: /courses/
 ---
 
-I offer various courses distilling the most important aspects of software engineering for scientific groups.
+# Learning coding topics in the age of AI?
+
+Yes. Even with agentic coding, it's crucial to know the key fundamentals of clean and robust software engineering.
+
+I distilled the most important aspects of software engineering for scientists, from `git` version control, over code-testing, common bugs and pitfalls, and reproducible workflow pipelines.
+
 Courses can be in-person or online, and they usually consist of a presentation part and a workshop part, but can be fully customized to your needs.
 I have so far given courses at:
 
@@ -29,8 +34,8 @@ But generally, we can adapt the courses as you need, as potentially not all aspe
 # Courses
 
 - Best practices for programming for scientists
-- <b>Beyond vibe-coding: programming successfully with AI</b>
 - Version control with `git` for scientists
+- Beyond vibe-coding: programming successfully with AI
 - Monitoring and optimizing resource usage of scientific code
 - Making quantitative research reproducible
 - Fundamentals of data science
@@ -40,6 +45,7 @@ But generally, we can adapt the courses as you need, as potentially not all aspe
 <hr/>
 
 # More details on the courses
+
 
 ### Best practices for programming for scientists (2 x 2h presentation)
 
@@ -59,23 +65,6 @@ But generally, we can adapt the courses as you need, as potentially not all aspe
 See also my blog posts on [writing proper code]({% post_url 2024-07-20-good-code-1-proper-naming-in-scientific-code %}) and [programming paradigms]({% post_url 2024-10-27-good-code-2-solid-principles %}).
 
 <br/>
-
-<hr/>
-
-### Beyond "vibe-coding": programming successfully with AI (~3h presentation, potentially with workshop)
-
-{% include figure.liquid loading="eager" path="assets/img/chatgpt.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
-<div class="caption">
-    New AI tools are here to help with coding. But they should be used wisely!
-</div>
-
-
-AI is here to stay and you'd have a competitive disadvantage if you didn't use it. But anyone can ask ChatGPT to write them some code. But do you just "vibe-code" or use the tools at hand efficiently? In this workshop, we will look into:
-
-- How to efficiently program with AI tools
-- How to make sure AI-generated or AI-influenced code is correct?
-- How can teachers detect AI-generated code?
-
 
 <hr/>
 
@@ -102,6 +91,23 @@ You can find the content of the workshop here: <a href="https://github.com/k-gre
 
 
 <hr/>
+### Beyond "vibe-coding": programming successfully with AI (~3h presentation, potentially with workshop)
+
+{% include figure.liquid loading="eager" path="assets/img/chatgpt.png" width=400 class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true %}
+<div class="caption">
+    New AI tools are here to help with coding. But they should be used wisely!
+</div>
+
+
+AI is here to stay and you'd have a competitive disadvantage if you didn't use it. But anyone can ask ChatGPT to write them some code. But do you just "vibe-code" or use the tools at hand efficiently? In this workshop, we will look into:
+
+- How to efficiently program with AI tools
+- How to make sure AI-generated or AI-influenced code is correct?
+- How can teachers detect AI-generated code?
+
+
+<hr/>
+
 
 ### Monitoring and optimizing resource usage of scientific code (~3h presentation, potentially with workshop)
 
