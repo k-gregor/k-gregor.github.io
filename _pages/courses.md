@@ -5,6 +5,16 @@ nav: true
 permalink: /courses/
 ---
 
+I have taught courses at the following institutions:
+
+
+<div class="d-flex align-items-center justify-content-center flex-wrap" style="gap: 2rem;">
+{% include figure.liquid loading="eager" path="assets/img/lund.svg" height=100 width="auto" %}
+{% include figure.liquid loading="eager" path="assets/img/berkeley.png" height=100 width="auto" %}
+{% include figure.liquid loading="eager" path="assets/img/egu.png" height=100 width="auto" %}
+{% include figure.liquid loading="eager" path="assets/img/tum.png" height=100 width="auto" %}
+</div>
+
 # Learning coding topics in the age of AI?
 
 Yes. Even with agentic coding, it's crucial to know the key fundamentals of clean and robust software engineering.
