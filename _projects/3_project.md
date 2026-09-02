@@ -1,9 +1,9 @@
 ---
 layout: page
-title: FOREXCLIM
-description: "Forests and extreme weather events: Solutions for risk resilient management in a changing climate"
-img: assets/img/forexclim.png
-redirect: https://www.foreco.org/index.php/2023/11/20/a-summary-of-forexclim-project/
+title: RISKANT
+description: "Deriving SPG (specific protection goals) for ants against toxins"
+img: assets/img/riskant.png
+redirect: https://riskant.app
 importance: 3
 category: work
 ---

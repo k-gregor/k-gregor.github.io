@@ -1,9 +1,9 @@
 ---
 layout: page
-title: STEPSEC
-description: Comparative evaluation of the potential of terrestrial methods to remove carbon dioxide
-img: assets/img/stepsec.png
-redirect: https://cdrterra.de/en/consortia/stepsec
+title: Smart Reforest
+description: Developing strategies for multi-functional, climate-resilient reforestation in Bavaria
+img: assets/img/bayklif2.svg
+redirect: https://bayklif2.de/smartreforest/
 importance: 2
 category:
 giscus_comments: true
