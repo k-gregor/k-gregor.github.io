@@ -303,7 +303,6 @@ From my experience, the **Best practices for programming for scientists** and **
       <span class="badge-pill-soft"><i class="fa-regular fa-clock"></i> 4h total</span>
       <span class="badge-pill-soft"><i class="fa-solid fa-person-chalkboard"></i> Presentation</span>
       <span class="badge-pill-soft"><i class="fa-solid fa-laptop-code"></i> Hands-on workshop</span>
-      <span class="badge-pill-soft"><i class="fa-solid fa-calendar-check"></i> Again at EGU 2027</span>
     </div>
     <ul>
       <li>What are the benefits of version control and why should all code be in version control?</li>
@@ -317,8 +316,7 @@ From my experience, the **Best practices for programming for scientists** and **
       <a href="https://github.com/k-gregor/git-workshop">github.com/k-gregor/git-workshop</a>
       <br/>
       <i class="fa-solid fa-earth-europe"></i> Given as a short course at
-      <a href="https://meetingorganizer.copernicus.org/EGU26/EGU26-7637.html">EGU 2026</a>,
-      and it will be offered again at EGU 2027!
+      <a href="https://meetingorganizer.copernicus.org/EGU26/EGU26-7637.html">EGU 2026</a>
     </div>
   </div>
 </div>
@@ -331,9 +329,9 @@ From my experience, the **Best practices for programming for scientists** and **
   <div class="course-body">
     <h3>Beyond "vibe-coding": programming successfully with AI</h3>
     <div class="course-meta">
-      <span class="badge-pill-soft"><i class="fa-regular fa-clock"></i> ~3h</span>
+      <span class="badge-pill-soft"><i class="fa-regular fa-clock"></i> ~4h</span>
       <span class="badge-pill-soft"><i class="fa-solid fa-person-chalkboard"></i> Presentation</span>
-      <span class="badge-pill-soft"><i class="fa-solid fa-laptop-code"></i> Optional workshop</span>
+      <span class="badge-pill-soft"><i class="fa-solid fa-laptop-code"></i>Hands-on Workshop</span>
     </div>
     <div class="course-caption">New AI tools are here to help with coding. But they should be used wisely!</div>
     <p>
